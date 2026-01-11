@@ -1,0 +1,143 @@
+---
+title: "Fundamentos de Modelos Lineares Generalizados (GLM)"
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    toc-floating: true
+    number-sections: true
+    code-fold: true
+    code-summary: "Mostrar/ocultar código"
+    code-copy: true
+    mathjax: true
+    css: styles.css
+  pdf:
+    toc: true
+    toc-depth: 3
+---
+
+# 1. Motivação
+
+- Regressão linear funciona bem para respostas contínuas com variância aproximadamente constante, mas falha quando $Y$ é binário, de contagem ou restrito a valores positivos (predições fora do suporte, variância não constante).
+- A regressão logística aparece como caso especial ao modelar probabilidades com ligação logit: garante que $\mu \in [0,1]$ e mantém o raciocínio linear em $X\beta$.
+- GLM é um framework que mantém o preditor linear $X\beta$ e troca a parte probabilística para respeitar o suporte do dado, unificando regressão linear, logística, Poisson, Gamma, entre outras.
+- Na prática de ML, a função de perda é a log-verossimilhança negativa; ao escolher distribuição + função de ligação, você obtém perdas familiares (MSE, log-loss) sob um guarda-chuva único.
+
+# 2. Regressão Linear como ponto de partida
+
+## Modelo e hipóteses essenciais
+
+- Modelo: $Y = X\beta + \varepsilon$, com $\varepsilon \sim \mathcal{N}(0, \sigma^2 I)$.
+- Interpretação geométrica: projetar $Y$ no subespaço gerado pelas colunas de $X$ minimiza a soma de quadrados dos resíduos.
+- Ligação com máxima verossimilhança: com erros Normais, minimizar $\sum (y_i - x_i^\top \beta)^2$ é equivalente a maximizar a log-verossimilhança.
+- Solução fechada (OLS):
+  $$
+  \hat{\beta} = (X^\top X)^{-1} X^\top y.
+  $$
+
+## Pequeno exemplo em Python
+
+```{python}
+import numpy as np
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+rng = np.random.default_rng(0)
+n = 80
+x = rng.uniform(0, 8, size=n)
+erro = rng.normal(0, 1.2, size=n)
+y = 3.0 + 2.5 * x + erro  # verdade do processo gerador
+
+X = x.reshape(-1, 1)
+model = LinearRegression()
+model.fit(X, y)
+
+print({"beta0_true": 3.0, "beta0_fit": model.intercept_})
+print({"beta1_true": 2.5, "beta1_fit": model.coef_[0]})
+```
+
+:::tip
+Pense em OLS como encontrar o vetor $\hat{\beta}$ que minimiza a distância euclidiana entre o vetor observado $Y$ e o vetor projetado $X\hat{\beta}$. Essa mesma ideia de “projetar na escala correta” reaparece nos GLMs.
+:::
+
+# 3. O que é um Modelo Linear Generalizado (GLM)
+
+## Ideia central
+
+- Manter o preditor linear $\eta = X\beta$ (estrutura familiar para quem trabalha com regressão).
+- Escolher uma distribuição para $Y$ na família exponencial, compatível com o suporte dos dados.
+- Conectar a média $\mu = \mathbb{E}[Y \mid X]$ ao preditor via uma função de ligação $g(\cdot)$:
+  $$
+  g(\mu) = X\beta.
+  $$
+
+## Componentes do GLM
+
+- **Parte aleatória**: distribuição para $Y$ (ex.: Normal, Bernoulli, Poisson, Gamma). Controla suporte e relação entre média e variância.
+- **Preditor linear**: $\eta = X\beta$, mesma construção da regressão linear.
+- **Função de ligação**: transforma a média $\mu$ para a escala linear. Ex.: identidade, logit, log.
+
+:::note
+Família exponencial facilita separar média e variância e dá propriedades úteis: $g(\cdot)$ costuma ser a ligação canônica que lineariza o parâmetro natural da distribuição.
+:::
+
+## Por que isso generaliza a regressão linear
+
+- Regressão linear é um GLM com distribuição Normal e ligação identidade $g(\mu)=\mu$.
+- Ao trocar a distribuição (ex.: Bernoulli) e a ligação (ex.: logit), mantemos $X\beta$ mas adequamos suporte e variância, obtendo a regressão logística.
+- O aprendizado continua por máxima verossimilhança, só que com uma função de perda coerente ao dado (MSE para Normal, log-loss para Binomial).
+
+# 4. Funções de ligação (visão prática)
+
+## O que é e por que importa
+
+- A ligação escolhe a escala onde a relação entre $X$ e a média de $Y$ fica linear.
+- Ela garante que as predições respeitem o suporte de $\mu$ (probabilidades entre 0 e 1, contagens positivas etc.).
+
+## Exemplos principais
+
+- **Identidade**: $g(\mu)=\mu$. Uso: respostas contínuas sem restrição forte de suporte (regressão linear).
+- **Logit**: $g(\mu)=\log\frac{\mu}{1-\mu}$. Uso: probabilidades (Bernoulli/Binomial). Predições sempre em $[0,1]$.
+- **Log**: $g(\mu)=\log \mu$. Uso: contagens (Poisson) ou variáveis positivas (Gamma). Predições sempre positivas.
+
+## Intuição geométrica e estatística
+
+- Identidade: trabalha diretamente na escala original; projeção euclidiana clássica.
+- Logit: mapeia probabilidades para a reta real, “descomprimindo” a região próxima de 0 e 1; cada $\beta_j$ atua em log-odds.
+- Log: transforma multiplicações em somas; útil quando efeitos são proporcionais (variações relativas constantes).
+
+## Pequeno experimento em Python
+
+```{python}
+import numpy as np
+import pandas as pd
+import statsmodels.api as sm
+
+rng = np.random.default_rng(42)
+n = 120
+x = rng.normal(0, 1.5, size=n)
+eta = -0.4 + 1.8 * x
+p = 1 / (1 + np.exp(-eta))  # ligação logit invertida
+y = rng.binomial(1, p)
+
+X = sm.add_constant(x)
+glm_logit = sm.GLM(y, X, family=sm.families.Binomial())
+res = glm_logit.fit()
+
+coef = dict(zip(["const", "x"], np.asarray(res.params)))
+print("Coeficientes na escala do log-odds:", coef)
+print("Probabilidade prevista para x=0:", float(res.predict([1, 0])[0]))
+```
+
+## Quando usar cada ligação (heurística rápida)
+
+- Identidade: métricas contínuas onde erros podem ser simétricos e sem limite rígido (temperatura, consumo com possibilidade de valores negativos em desvios).
+- Logit: classificação binária; reporte de probabilidades calibradas importa; saída sempre entre 0 e 1.
+- Log: contagens ou taxas; interesse em efeitos multiplicativos e em evitar predições negativas.
+
+## Conexão direta com regressão logística
+
+- Regressão logística é o GLM Binomial com ligação logit; sua função de perda é a cross-entropy, que nada mais é que a log-verossimilhança negativa da Binomial.
+- Cada coeficiente move a decisão na escala de log-odds; um incremento em $X_j$ multiplica as **odds** por $\exp(\beta_j)$.
