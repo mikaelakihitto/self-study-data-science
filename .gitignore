@@ -87,3 +87,23 @@ data/**/external/
 *.zip
 *.tar
 *.gz
+
+# Allow media files when they are part of themed content
+!temas/**/assets/**/*.pdf
+!temas/**/assets/**/*.png
+!temas/**/assets/**/*.jpg
+!temas/**/assets/**/*.jpeg
+!temas/**/assets/**/*.webp
+!temas/**/assets/**/*.gif
+!temas/**/assets/**/*.mp4
+!temas/**/assets/**/*.mov
+!temas/**/assets/**/*.avi
+!temas/**/publicado/**/*.pdf
+!temas/**/publicado/**/*.png
+!temas/**/publicado/**/*.jpg
+!temas/**/publicado/**/*.jpeg
+!temas/**/publicado/**/*.webp
+!temas/**/publicado/**/*.gif
+!temas/**/publicado/**/*.mp4
+!temas/**/publicado/**/*.mov
+!temas/**/publicado/**/*.avi
