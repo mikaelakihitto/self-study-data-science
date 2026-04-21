@@ -88,16 +88,15 @@ data/**/external/
 *.tar
 *.gz
 
-# Allow media files when they are part of themed content
-!temas/**/assets/**/*.pdf
-!temas/**/assets/**/*.png
-!temas/**/assets/**/*.jpg
-!temas/**/assets/**/*.jpeg
-!temas/**/assets/**/*.webp
-!temas/**/assets/**/*.gif
-!temas/**/assets/**/*.mp4
-!temas/**/assets/**/*.mov
-!temas/**/assets/**/*.avi
+# Manim generated media and derivatives inside theme assets
+temas/**/assets/videos/
+temas/**/assets/images/
+temas/**/assets/texts/
+temas/**/assets/Tex/
+temas/**/assets/**/partial_movie_files/
+temas/**/assets/**/*.log
+
+# Allow curated media files when they are part of published themed content
 !temas/**/publicado/**/*.pdf
 !temas/**/publicado/**/*.png
 !temas/**/publicado/**/*.jpg
