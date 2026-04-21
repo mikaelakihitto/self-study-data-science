@@ -1,2 +1,89 @@
-.venv
+# =========================
+# Python / virtualenv
+# =========================
+.venv/
+venv/
+env/
+ENV/
+
+# =========================
+# Python cache / build
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# =========================
+# Jupyter / notebooks
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Quarto / rendered outputs
+# =========================
+.quarto/
+_site/
+.Rproj.user/
+
+# =========================
+# IDE / OS files
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# =========================
+# Logs / temp files
+# =========================
+*.log
+*.tmp
+*.temp
+tmp/
+temp/
+
+# =========================
+# Data artifacts (often heavy)
+# Keep source data intentionally tracked if needed.
+# =========================
+data/**/processed/
+data/**/interim/
+data/**/external/
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.pickle
+*.pkl
+*.joblib
+*.sqlite
+*.db
+
+# =========================
+# Binary/media outputs that can bloat repo
+# =========================
 *.pdf
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.mp4
+*.mov
+*.avi
+*.zip
+*.tar
+*.gz
