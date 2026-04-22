@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from manim import *
+import numpy as np
 
 
 BASE_DIR = Path(__file__).resolve().parents[1]
@@ -104,33 +105,60 @@ class DecisionTreeSimple(Scene):
 
 class LinearRegressionSimple(Scene):
     def construct(self):
-        title = Text("Regressao Linear (simples)", font_size=42).to_edge(UP)
+        title = Text("Regressao Linear: Renda x Cartao", font_size=40).to_edge(UP)
         self.play(Write(title))
 
+        problem = Text(
+            "Problema: estimar a renda mensal pela fatura do cartao",
+            font_size=28,
+        ).next_to(title, DOWN, buff=0.35)
+        self.play(FadeIn(problem, shift=0.2 * DOWN))
+        self.wait(0.6)
+
         axes = Axes(
-            x_range=[0, 10, 2],
-            y_range=[0, 10, 2],
-            x_length=8,
-            y_length=4.8,
+            x_range=[0, 20000, 5000],
+            y_range=[0, 70000, 10000],
+            x_length=6.8,
+            y_length=4.4,
             axis_config={"include_numbers": True},
-        ).shift(0.4 * DOWN)
-        labels = axes.get_axis_labels(Text("x"), Text("y"))
-        self.play(Create(axes), Write(labels))
+            tips=False,
+        ).shift(1.55 * LEFT + 0.3 * DOWN)
 
-        points_xy = [(1, 1.8), (2, 2.7), (3, 3.9), (5, 5.1), (7, 6.8), (8, 7.6)]
-        points = VGroup(*[Dot(axes.c2p(x, y), color=BLUE, radius=0.08) for x, y in points_xy])
-        self.play(LaggedStart(*[FadeIn(p, scale=0.6) for p in points], lag_ratio=0.15))
+        x_label = Text("Gasto no cartao (R$/mes)", font_size=21).next_to(axes.x_axis, DOWN, buff=0.22)
+        y_label = Text("Renda mensal (R$)", font_size=24).rotate(PI / 2).next_to(axes.y_axis, LEFT, buff=0.35)
 
-        fit_line = axes.plot(lambda x: 0.82 * x + 1.0, x_range=[0, 10], color=YELLOW)
-        equation = MathTex(r"\hat{y} = 0.82x + 1.0", color=YELLOW).scale(0.9).to_corner(UR).shift(0.2 * DOWN)
+        self.play(Create(axes), Write(x_label), Write(y_label))
+        self.wait(0.6)
+
+        seed = 42
+        rng = np.random.default_rng(seed)
+        x_vals = np.clip(np.linspace(700.0, 18000.0, 10) + rng.normal(0.0, 900.0, 10), 300.0, 19500.0)
+        x_vals.sort()
+        y_vals = np.clip(3.1 * x_vals + 2500.0 + rng.normal(0.0, 9000.0, 10), 1200.0, 68000.0)
+        points_xy = list(zip(x_vals.tolist(), y_vals.tolist()))
+        points = VGroup(*[Dot(axes.c2p(x, y), color=BLUE_E, radius=0.075) for x, y in points_xy])
+
+        self.play(LaggedStart(*[FadeIn(p, scale=0.7) for p in points], lag_ratio=0.12, run_time=2.0))
+        self.wait(0.6)
+
+        fit_line = axes.plot(lambda x: 3.0 * x + 3000.0, x_range=[300, 19000], color=YELLOW)
+        equation = MathTex(
+            r"\widehat{\text{renda}} = 3.0 \cdot \text{gasto} + 3000",
+            color=YELLOW,
+        ).scale(0.66).to_edge(RIGHT, buff=0.35).shift(0.3 * UP)
+
         self.play(Create(fit_line), Write(equation))
 
-        sample_x, sample_y = points_xy[3]
-        y_pred = 0.82 * sample_x + 1.0
-        residual = DashedLine(axes.c2p(sample_x, sample_y), axes.c2p(sample_x, y_pred), color=RED)
-        residual_label = Text("erro", font_size=24, color=RED).next_to(residual, RIGHT, buff=0.12)
-        self.play(Create(residual), Write(residual_label))
+        example_x = 8000.0
+        predicted_y = 3.0 * example_x + 3000.0
+        example_point = Dot(axes.c2p(example_x, predicted_y), color=YELLOW, radius=0.09)
+        v_line = DashedLine(axes.c2p(example_x, 0), axes.c2p(example_x, predicted_y), color=YELLOW_C)
+        h_line = DashedLine(axes.c2p(0, predicted_y), axes.c2p(example_x, predicted_y), color=YELLOW_C)
+        example_text = VGroup(
+            Text("Exemplo: gasto = R$ 8.000", font_size=19, color=YELLOW_D),
+            Text("renda prevista ~ R$ 27.000", font_size=19, color=YELLOW_D),
+        ).arrange(DOWN, aligned_edge=LEFT, buff=0.06).next_to(equation, DOWN, buff=0.18).align_to(equation, LEFT)
 
-        takeaway = Text("A reta minimiza os erros dos pontos", font_size=30, color=GRAY_B).to_edge(DOWN)
-        self.play(Write(takeaway))
-        self.wait(1.5)
+        self.play(Create(v_line), Create(h_line), FadeIn(example_point))
+        self.play(Write(example_text))
+        self.wait(1.8)
