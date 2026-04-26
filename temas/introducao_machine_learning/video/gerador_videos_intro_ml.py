@@ -16,6 +16,8 @@ config.media_dir = str(ASSETS_DIR)
 Render examples:
   manim -pql temas/introducao_machine_learning/video/gerador_videos_intro_ml.py DecisionTreeSimple
   manim -pql temas/introducao_machine_learning/video/gerador_videos_intro_ml.py LinearRegressionSimple
+  manim -pql temas/introducao_machine_learning/video/gerador_videos_intro_ml.py FacultyFormulaFlowchart
+  manim -pql temas/introducao_machine_learning/video/gerador_videos_intro_ml.py MachineLearningFlowchart
 """
 
 
@@ -162,3 +164,195 @@ class LinearRegressionSimple(Scene):
         self.play(Create(v_line), Create(h_line), FadeIn(example_point))
         self.play(Write(example_text))
         self.wait(1.8)
+
+
+class FacultyFormulaFlowchart(Scene):
+    def construct(self):
+        title = Text("Problemas Prontos na Faculdade", font_size=40).to_edge(UP)
+        concept = Text("Na faculdade, muitos problemas vem prontos.", font_size=28).next_to(title, DOWN, buff=0.3)
+        self.play(Write(title))
+        self.play(FadeIn(concept, shift=0.2 * DOWN))
+        self.wait(0.5)
+
+        examples_title = Text("Exemplos:", font_size=26, color=BLUE_E).to_edge(LEFT, buff=0.6).shift(1.0 * UP)
+        example_items = [
+            "calcular corrente eletrica",
+            "tensao",
+            "momento fletor",
+            "vazao",
+            "temperatura",
+            "otimizar uma funcao",
+        ]
+        examples = VGroup(*[Text(f"- {item}", font_size=22) for item in example_items])
+        examples.arrange(DOWN, aligned_edge=LEFT, buff=0.15).next_to(examples_title, DOWN, aligned_edge=LEFT, buff=0.2)
+
+        self.play(Write(examples_title))
+        self.play(LaggedStart(*[FadeIn(item, shift=0.15 * RIGHT) for item in examples], lag_ratio=0.15, run_time=2.2))
+        self.wait(0.7)
+        self.play(FadeOut(examples_title), FadeOut(examples))
+
+        input_box = RoundedRectangle(
+            corner_radius=0.15,
+            width=2.4,
+            height=1.1,
+            stroke_color=BLUE_E,
+            stroke_width=3,
+        )
+        input_label = Text("Input", font_size=30).move_to(input_box.get_center())
+        input_group = VGroup(input_box, input_label).shift(4.5 * LEFT + 0.5 * DOWN)
+
+        process_box = RoundedRectangle(
+            corner_radius=0.15,
+            width=4.2,
+            height=1.3,
+            stroke_color=YELLOW_E,
+            stroke_width=3,
+        )
+        process_label = VGroup(
+            Text("Funções", font_size=27),
+            Text("Métodos", font_size=27),
+            Text("Fórmulas", font_size=27),
+        ).arrange(DOWN, buff=0.06).move_to(process_box.get_center())
+        process_group = VGroup(process_box, process_label).shift(0.5 * DOWN)
+
+        output_box = RoundedRectangle(
+            corner_radius=0.15,
+            width=2.6,
+            height=1.1,
+            stroke_color=GREEN_E,
+            stroke_width=3,
+        )
+        output_label = Text("Output", font_size=30).move_to(output_box.get_center())
+        output_group = VGroup(output_box, output_label).shift(4.5 * RIGHT + 0.5 * DOWN)
+
+        arrow_left = Arrow(input_group.get_right(), process_group.get_left(), buff=0.15, stroke_width=4, max_tip_length_to_length_ratio=0.12)
+        arrow_right = Arrow(process_group.get_right(), output_group.get_left(), buff=0.15, stroke_width=4, max_tip_length_to_length_ratio=0.12)
+
+        formulas = VGroup(
+            MathTex(r"V = RI", color=YELLOW_D).scale(1.0),
+            MathTex(r"F = ma", color=YELLOW_D).scale(1.0),
+        ).arrange(DOWN, buff=0.2).next_to(process_group, DOWN, buff=0.35)
+
+        self.play(Create(input_group), Create(process_group), Create(output_group), run_time=1.8)
+        self.play(Create(arrow_left), Create(arrow_right), run_time=1.1)
+        self.play(Write(formulas), run_time=1.0)
+
+        takeaway = Text("Existe uma lei, uma formula... e voce aplica.", font_size=28, color=GRAY_B).to_edge(DOWN, buff=0.35)
+        self.play(Write(takeaway))
+        self.wait(2.0)
+
+
+class MachineLearningFlowchart(Scene):
+    def construct(self):
+        title = Text("Mercado Real: Descobrir o Bloco do Meio", font_size=38).to_edge(UP)
+        block2 = Text("No mercado real, os problemas chegam assim:", font_size=26).next_to(title, DOWN, buff=0.28)
+        self.play(Write(title))
+        self.play(FadeIn(block2, shift=0.15 * DOWN))
+
+        market_items = [
+            "cliente paga ou da calote?",
+            "quanto vamos vender mes que vem?",
+            "essa transacao e fraude?",
+            "qual cliente vai cancelar?",
+            "quanto risco existe nessa operacao?",
+        ]
+        market_list = VGroup(*[Text(f"- {item}", font_size=21) for item in market_items])
+        market_list.arrange(DOWN, aligned_edge=LEFT, buff=0.12).to_edge(LEFT, buff=0.55).shift(0.55 * DOWN)
+        self.play(LaggedStart(*[FadeIn(item, shift=0.12 * RIGHT) for item in market_list], lag_ratio=0.16, run_time=2.3))
+
+        unknown_formula = Text("Detalhe importante: ninguem sabe a formula exata.", font_size=25, color=RED_E).to_edge(DOWN, buff=0.35)
+        self.play(Write(unknown_formula))
+        self.wait(0.7)
+
+        self.play(FadeOut(market_list), FadeOut(block2), FadeOut(unknown_formula))
+
+        input_box = RoundedRectangle(
+            corner_radius=0.15,
+            width=2.5,
+            height=1.1,
+            stroke_color=BLUE_E,
+            stroke_width=3,
+        )
+        input_label = Text("Input", font_size=30).move_to(input_box.get_center())
+        input_group = VGroup(input_box, input_label).shift(4.5 * LEFT + 0.6 * UP)
+
+        process_box = RoundedRectangle(
+            corner_radius=0.15,
+            width=4.1,
+            height=1.4,
+            stroke_color=YELLOW_E,
+            stroke_width=3,
+        )
+        process_label_unknown = VGroup(
+            Text("Funcao", font_size=29),
+            Text("desconhecida ?", font_size=29),
+        ).arrange(DOWN, buff=0.02).move_to(process_box.get_center())
+        process_group = VGroup(process_box, process_label_unknown).shift(0.6 * UP)
+
+        output_box = RoundedRectangle(
+            corner_radius=0.15,
+            width=2.6,
+            height=1.1,
+            stroke_color=GREEN_E,
+            stroke_width=3,
+        )
+        output_label = Text("Output", font_size=30).move_to(output_box.get_center())
+        output_group = VGroup(output_box, output_label).shift(4.5 * RIGHT + 0.6 * UP)
+
+        arrow_left = Arrow(input_group.get_right(), process_group.get_left(), buff=0.15, stroke_width=4, max_tip_length_to_length_ratio=0.12)
+        arrow_right = Arrow(process_group.get_right(), output_group.get_left(), buff=0.15, stroke_width=4, max_tip_length_to_length_ratio=0.12)
+
+        self.play(Create(input_group), Create(process_group), Create(output_group), run_time=1.8)
+        self.play(Create(arrow_left), Create(arrow_right), run_time=1.0)
+
+        branch_title = Text("As vezes temos output, as vezes nao.", font_size=23, color=GRAY_B).next_to(process_group, DOWN, buff=0.35)
+        supervised_line = Text("Supervisionado: Input + Output historico -> aprender modelo", font_size=20, color=GREEN_E)
+        unsupervised_line = Text("Nao supervisionado: Input (sem output) -> descobrir padroes", font_size=20, color=BLUE_E)
+        branch_lines = VGroup(supervised_line, unsupervised_line).arrange(DOWN, aligned_edge=LEFT, buff=0.14).next_to(branch_title, DOWN, buff=0.15)
+
+        self.play(Write(branch_title))
+        self.play(FadeIn(supervised_line, shift=0.1 * DOWN), FadeIn(unsupervised_line, shift=0.1 * DOWN))
+
+        process_label_model = VGroup(
+            Text("Modelo", font_size=29, color=YELLOW_D),
+            Text("aprendido", font_size=29, color=YELLOW_D),
+        ).arrange(DOWN, buff=0.02).move_to(process_box.get_center())
+        self.play(Transform(process_label_unknown, process_label_model), run_time=1.1)
+
+        ml_def = VGroup(
+            Text("Machine Learning e fazer a maquina aprender", font_size=24),
+            Text("a relacao entre variaveis e resultado.", font_size=24),
+        ).arrange(DOWN, buff=0.07).next_to(title, DOWN, buff=0.2)
+        self.play(Write(ml_def), run_time=1.0)
+
+        equation = MathTex(
+            r"y = ",
+            r"f",
+            r"(x_1, x_2, x_3, \ldots, x_n)",
+            color=YELLOW,
+        ).scale(0.9).next_to(branch_lines, DOWN, buff=0.22)
+        self.play(Write(equation))
+        f_part = equation[1]
+        self.play(Circumscribe(f_part, color=YELLOW_D, time_width=0.7))
+
+        self.play(FadeOut(branch_title), FadeOut(branch_lines), FadeOut(ml_def))
+
+        example_title = Text("Exemplo em banco", font_size=24, color=BLUE_E).next_to(equation, DOWN, buff=0.18)
+        inputs_title = Text("Entradas:", font_size=21).next_to(example_title, DOWN, buff=0.12).align_to(input_group, LEFT)
+        inputs_data = VGroup(
+            Text("- renda", font_size=18),
+            Text("- idade", font_size=18),
+            Text("- score", font_size=18),
+            Text("- historico de pagamento", font_size=18),
+            Text("- divida atual", font_size=18),
+            Text("- tempo de relacionamento", font_size=18),
+        ).arrange(DOWN, aligned_edge=LEFT, buff=0.06).next_to(inputs_title, DOWN, aligned_edge=LEFT, buff=0.08)
+
+        output_title = Text("Saida:", font_size=21).next_to(example_title, DOWN, buff=0.12).align_to(output_group, LEFT)
+        output_data = Text("- chance de inadimplencia", font_size=18).next_to(output_title, DOWN, aligned_edge=LEFT, buff=0.08)
+        closing = Text("Usamos exemplos do passado para decidir melhor no futuro.", font_size=22, color=GRAY_B).to_edge(DOWN, buff=0.26)
+
+        self.play(Write(example_title))
+        self.play(FadeIn(inputs_title), FadeIn(inputs_data, shift=0.08 * DOWN), FadeIn(output_title), FadeIn(output_data, shift=0.08 * DOWN))
+        self.play(Write(closing))
+        self.wait(2.0)
