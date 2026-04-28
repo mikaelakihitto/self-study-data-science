@@ -1,0 +1,298 @@
+---
+title: "Introdução a Machine Learning: uma visão de engenharia para problemas reais"
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    toc-floating: true
+    number-sections: true
+    mathjax: true
+  pdf:
+    toc: true
+    toc-depth: 3
+---
+
+# O problema real começa quando a fórmula não existe
+
+Se você veio de engenharia, física, matemática, economia quantitativa ou qualquer área de exatas, provavelmente foi treinado para resolver problemas muito bem definidos.
+
+O padrão costuma ser:
+
+- existe uma relação matemática conhecida
+- você recebe os dados de entrada
+- calcula a resposta correta
+
+Por anos, isso funciona. Você aprende leis, hipóteses e modelos clássicos. Em muitos casos, esse raciocínio é exato e elegante:
+
+$$
+V = RI
+$$
+
+ou
+
+$$
+F = ma
+$$
+
+No mercado, porém, o jogo muda. O problema geralmente chega sem equação explícita. Ninguém te entrega a fórmula que liga causa e efeito. A pergunta vem assim:
+
+- esse cliente vai pagar ou atrasar?
+- quanto vamos vender no próximo mês?
+- essa transação é fraude?
+- qual cliente tem maior chance de cancelar?
+
+Machine Learning existe justamente para esse cenário: quando você precisa **descobrir relações úteis a partir dos dados**, em vez de apenas aplicar relações já conhecidas.
+
+# O que a faculdade ensina (e por que isso ainda é útil)
+
+A formação tradicional não está errada. Ela constrói base:
+
+- modelagem matemática
+- raciocínio causal
+- noção de incerteza e erro
+- disciplina de validação
+
+Isso é extremamente valioso em Machine Learning. O problema é outro: muitos cursos focam em sistemas onde as leis são relativamente estáveis. No trabalho real, especialmente em negócios e finanças, você modela sistemas sociais, com comportamento humano, incentivos e mudança contínua.
+
+Ainda assim, existe continuidade entre os mundos. O que muda não é a necessidade de rigor; muda o tipo de sistema que você está modelando.
+
+# O que é Machine Learning, sem mistério
+
+**De forma informal**, pense assim:
+
+Machine Learning é ensinar a máquina com exemplos do passado para que ela faça boas estimativas quando surgir um caso novo.
+
+No banco, por exemplo, você mostra milhares de clientes antigos com suas características e o que aconteceu depois (pagou ou atrasou). A partir disso, o modelo aprende padrões e passa a estimar risco para novos clientes.
+
+**Agora, em uma definição mais formal:**
+
+Aprendizado de Máquina é o estudo de algoritmos que, a partir de dados, aprendem uma função de predição
+
+$$
+f_\theta: \mathcal{X} \rightarrow \mathcal{Y}
+$$
+
+em que:
+
+- $\mathcal{X}$ é o espaço de entradas (features)
+- $\mathcal{Y}$ é o espaço de saídas (alvo)
+- $\theta$ são os parâmetros do modelo
+
+Para um exemplo individual, escrevemos:
+
+$$
+\hat{y} = f_\theta(x), \quad x = (x_1, x_2, \ldots, x_n)
+$$
+
+No aprendizado supervisionado, temos uma amostra histórica
+
+$$
+\mathcal{D} = \{(x_i, y_i)\}_{i=1}^{m}
+$$
+
+e escolhemos $\theta$ minimizando uma função de perda média (risco empírico):
+
+$$
+\hat{\theta} = \arg\min_{\theta}\frac{1}{m}\sum_{i=1}^{m}\ell\!\left(y_i, f_\theta(x_i)\right)
+$$
+
+Em termos práticos:
+
+- $x$: informações disponíveis (renda, idade, score, histórico, dívida, tempo de relacionamento)
+- $y$: variável de interesse (por exemplo, inadimplência)
+- $\ell$: penalização do erro de previsão
+
+Ou seja, você não programa manualmente a regra final. O algoritmo ajusta os parâmetros $\theta$ para reduzir erro nos dados e generalizar para novos casos.
+
+# A diferença estrutural: sistemas físicos vs sistemas humanos
+
+Em engenharia clássica, é comum trabalhar com:
+
+- circuitos
+- estruturas
+- fluidos
+- calor
+- movimento
+
+Esses sistemas tendem a exibir estabilidade sob condições semelhantes. Quando as hipóteses do modelo se mantêm, o comportamento também se mantém.
+
+Em negócios, você frequentemente modela pessoas e instituições. E esse tipo de sistema:
+
+- muda com o tempo
+- reage a incentivos
+- responde a contexto econômico
+- sofre choques externos
+- altera o próprio comportamento após observar regras
+
+Isso tem implicações diretas:
+
+- o modelo envelhece
+- a distribuição dos dados muda (data drift)
+- a relação entre variável e resultado pode mudar (concept drift)
+
+Por isso, em ML aplicado, treinar um modelo não é o fim do trabalho. É o início de um ciclo contínuo de monitoramento, recalibração e revisão.
+
+# Não existe fórmula universal no mercado
+
+Dois negócios podem ter o “mesmo problema no papel” e precisar de soluções muito diferentes.
+
+Exemplo: dois bancos querem prever inadimplência.
+
+Banco A:
+
+- base de alta renda
+- histórico longo
+- perfil de consumo mais estável
+
+Banco B:
+
+- público jovem
+- renda variável
+- pouco histórico formal
+
+Mesmo objetivo, ecossistemas diferentes. Logo:
+
+- dados diferentes
+- sinais de risco diferentes
+- custo de erro diferente
+- melhor modelo potencialmente diferente
+
+Esse é um ponto-chave de maturidade em ML:
+
+No mercado real, o melhor modelo não é o “mais famoso”. É o que funciona melhor para o contexto específico, sob as restrições reais da operação.
+
+# Como o modelo aprende na prática
+
+Imagine uma base com 1 milhão de clientes passados. Para cada cliente, você conhece atributos e o desfecho (pagou ou não pagou).
+
+O treinamento, de forma simplificada, faz três coisas:
+
+1. procura padrões estatísticos nos dados históricos
+2. ajusta parâmetros para minimizar erro de previsão
+3. testa se o padrão generaliza para dados não vistos
+
+Sem validação fora da amostra, “acerto no treino” não vale quase nada. O risco clássico é overfitting: o modelo memoriza ruído histórico e perde capacidade de previsão no mundo real.
+
+Por isso, todo projeto de ML sério envolve:
+
+- separação treino/validação/teste
+- métrica alinhada ao negócio (não só acurácia)
+- análise de estabilidade temporal
+- avaliação de custo de falsos positivos e falsos negativos
+
+# Exemplo 1: regressão linear como primeiro degrau
+
+Um caso simples: prever gasto mensal no cartão.
+
+Se a relação média entre renda e gasto for aproximadamente linear, podemos modelar:
+
+$$
+y = a + bx
+$$
+
+Onde:
+
+- $x$: renda mensal
+- $y$: gasto esperado no cartão
+- $a, b$: parâmetros aprendidos com dados
+
+Suponha que o ajuste estimou:
+
+$$
+\text{Gasto} = 500 + 0.1 \cdot \text{Renda}
+$$
+
+Então:
+
+- renda de R\$ 5.000 $\rightarrow$ gasto previsto de R\$ 1.000
+- renda de R\$ 10.000 $\rightarrow$ gasto previsto de R\$ 1.500
+
+Esse exemplo parece básico, e é. Mas ele ensina o núcleo de ML:
+
+- definir variável alvo
+- escolher variáveis explicativas
+- ajustar parâmetros com dados
+- validar capacidade preditiva
+
+Muitos projetos avançados falham não por falta de algoritmo sofisticado, mas por erro nesses fundamentos.
+
+# Exemplo 2: árvore de decisão para regras de negócio
+
+Agora mude o problema: “o cliente vai atrasar?”
+
+Árvores de decisão funcionam bem quando a decisão depende de regras condicionais.
+
+```text
+Score > 700?
+ ├── Sim → risco baixo
+ └── Não
+      Tempo de emprego > 2 anos?
+        ├── Sim → risco médio
+        └── Não → risco alto
+```
+
+Interpretação:
+
+- score alto tende a reduzir risco
+- estabilidade no emprego melhora perfil
+- combinação de sinais fracos aumenta risco
+
+A vantagem prática da árvore é a interpretabilidade. Você consegue explicar decisões de forma mais direta para áreas de risco, negócio e compliance.
+
+# Regressão linear vs árvore: não é disputa, é adequação
+
+Regressão linear costuma funcionar melhor quando:
+
+- relação entre entrada e saída é aproximadamente contínua
+- você precisa de interpretação paramétrica direta
+- o processo é relativamente estável
+
+Árvore de decisão costuma funcionar melhor quando:
+
+- há interações não lineares
+- regras segmentadas capturam melhor o fenômeno
+- explicabilidade operacional é prioridade
+
+Na prática, times maduros não escolhem por preferência pessoal. Eles comparam modelos por desempenho fora da amostra, custo de erro, estabilidade e capacidade de operação em produção.
+
+# Do básico ao moderno: o princípio permanece
+
+Modelos como Random Forest, XGBoost e LightGBM são evoluções da ideia de árvores. Redes neurais ampliam a capacidade de representar relações complexas em dados de alta dimensão.
+
+Mas a lógica raiz continua:
+
+- usar dados históricos
+- aprender um padrão útil
+- prever ou decidir melhor no futuro
+
+Trocar de algoritmo sem resolver definição de problema, qualidade de dados e processo de validação é só trocar ferramenta mantendo o mesmo erro de estratégia.
+
+# O que realmente importa para quem vem de exatas
+
+Quem vem da engenharia já tem boa parte da base:
+
+- matemática
+- estatística
+- modelagem
+- pensamento sistemático
+
+O salto para ML aplicado está em desenvolver competências que a universidade nem sempre enfatiza:
+
+- traduzir problema de negócio em variável alvo
+- trabalhar com dado incompleto e sujo
+- lidar com viés de seleção e vazamento de informação
+- definir métricas que reflitam impacto real
+- aceitar que o sistema muda e o modelo precisa evoluir
+
+Em resumo:
+
+Engenharia costuma resolver problemas onde a fórmula já é conhecida. Machine Learning resolve problemas em que a fórmula precisa ser descoberta, testada e monitorada continuamente.
+
+# Conclusão: o que é mais importante para aprender
+
+Machine Learning não é mágica e não substitui pensamento crítico. É uma disciplina de modelagem aplicada sob incerteza, com foco em decisão.
+
+Quando bem aplicado, ele não “adivinha o futuro”. Ele melhora a qualidade das decisões futuras usando evidência histórica de forma estruturada.
+
