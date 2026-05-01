@@ -1,7 +1,7 @@
 ---
 title: "Aula 1 - Da IA Tradicional a IA Generativa"
-subtitle: "Introducao pratica a IA e GenIA"
-author: "Material didatico"
+subtitle: "Introdução prática à IA e GenIA"
+author: "Material didático"
 execute:
   fig-align: center
 format:
@@ -10,33 +10,24 @@ format:
     incremental: false
     fig-width: 7
     fig-height: 4
-  pdf:
-    toc: true
-    number-sections: false
-    fig-width: 7
-    fig-height: 4
-  html:
-    toc: true
-    fig-width: 7
-    fig-height: 4
 lang: pt-BR
 ---
 
-# Visao Geral
+# Visão Geral
 
 ## Abertura
 
-- Disciplina: Introducao a Inteligencia Artificial.
-- Publico: profissionais de engenharia, arquitetura, construcao e gestao.
-- Abordagem: conceitual, pratica e aplicada, sem exigencia de programacao.
-- Foco desta aula: entender o que e IA, como ela evoluiu e por que a IA generativa mudou o trabalho cotidiano.
+- Disciplina: Introdução à Inteligência Artificial.
+- Público: profissionais de engenharia, arquitetura, construção e gestão.
+- Abordagem: conceitual, prática e aplicada, sem exigência de programação.
+- Foco desta aula: entender o que é IA, como ela evoluiu e por que a IA generativa mudou o trabalho cotidiano.
 
 ```{mermaid}
 %%| fig-align: center
 %%| out-width: 72%
 graph LR
     A[IA] --> B[Conceitos]
-    A --> C[Aplicacoes]
+    A --> C[Aplicações]
     A --> D[Uso profissional]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
@@ -50,11 +41,11 @@ graph LR
 
 Ao final desta aula, a turma deve ser capaz de:
 
-- explicar o que e Inteligencia Artificial em linguagem simples;
-- diferenciar automacao, IA tradicional, machine learning, deep learning e IA generativa;
-- reconhecer onde IA ja aparece no dia a dia profissional;
+- explicar o que é Inteligência Artificial em linguagem simples;
+- diferenciar automação, IA tradicional, machine learning, deep learning e IA generativa;
+- reconhecer onde IA já aparece no dia a dia profissional;
 - entender o papel dos LLMs e da IA multimodal;
-- identificar oportunidades e limites do uso de IA no contexto da construcao civil.
+- identificar oportunidades e limites do uso de IA no contexto da construção civil.
 
 ```{mermaid}
 %%| fig-align: center
@@ -62,8 +53,8 @@ Ao final desta aula, a turma deve ser capaz de:
 graph TD
     A[Objetivos]
     A --> N1[Conceitos]
-    A --> N2[Diferencas]
-    A --> N3[Aplicacoes]
+    A --> N2[Diferenças]
+    A --> N3[Aplicações]
     A --> N4[LLMs]
     A --> N5[Limites]
     %% Definicao das cores
@@ -76,12 +67,12 @@ graph TD
 
 ## Agenda
 
-1. IA nao comecou com o ChatGPT.
-2. O que e Inteligencia Artificial.
-3. Evolucao: regras, machine learning, deep learning e IA generativa.
+1. IA não começou com o ChatGPT.
+2. O que é Inteligência Artificial.
+3. Evolução: regras, machine learning, deep learning e IA generativa.
 4. O que mudou com a IA generativa.
 5. LLMs e IA multimodal.
-6. Demonstracoes praticas.
+6. Demonstrações práticas.
 7. Fechamento e debate.
 
 ```{mermaid}
@@ -89,7 +80,7 @@ graph TD
 %%| out-width: 72%
 graph LR
     A[Cotidiano] --> B[Fundamentos]
-    B --> C[Evolucao]
+    B --> C[Evolução]
     C --> D[GenAI]
     D --> E[LLMs]
     E --> F[Demos]
@@ -104,20 +95,20 @@ graph LR
 
 # IA no Cotidiano
 
-## IA Nao Comecou com o ChatGPT
+## IA Não Começou com o ChatGPT
 
-- Antes da IA generativa, muitas pessoas ja usavam IA sem chamar de IA.
+- Antes da IA generativa, muitas pessoas já usavam IA sem chamar de IA.
 - O salto recente foi a interface em linguagem natural e o acesso massivo.
-- A novidade nao e apenas tecnologica; e tambem de usabilidade.
+- A novidade não é apenas tecnológica; é também de usabilidade.
 
 ```{mermaid}
 %%| fig-align: center
 %%| out-width: 72%
 graph LR
     T1[IA embutida em sistemas]
-    T2[IA conversacional acessivel]
+    T2[IA conversacional acessível]
     T1 --> T2
-    T3[uso cotidiano por nao tecnicos]
+    T3[uso cotidiano por não técnicos]
     T2 --> T3
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
@@ -130,10 +121,10 @@ graph LR
 ## Exemplos do Dia a Dia
 
 - Waze sugerindo rotas e prevendo tempo de deslocamento.
-- Netflix, Spotify e YouTube recomendando conteudo.
-- Bancos detectando fraude em transacoes.
+- Netflix, Spotify e YouTube recomendando conteúdo.
+- Bancos detectando fraude em transações.
 - Reconhecimento facial em dispositivos e sistemas de acesso.
-- Tradutores automaticos e corretores inteligentes.
+- Tradutores automáticos e corretores inteligentes.
 
 ```{mermaid}
 %%| fig-align: center
@@ -144,7 +135,7 @@ graph TD
     A --> N2[Streaming]
     A --> N3[Bancos]
     A --> N4[Biometria]
-    A --> N5[Traducao]
+    A --> N5[Tradução]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
     classDef styleVerde fill:#E7F2E8,stroke:#90B29A,stroke-width:2px,color:#243B53;
@@ -155,11 +146,11 @@ graph TD
 
 ## Exemplos no Contexto Profissional
 
-- Classificacao automatica de documentos.
-- Previsao de atrasos ou desvios de cronograma.
-- Apoio a orcamentos e comparacao de propostas.
-- Analise de registros fotograficos de obras.
-- Geracao e revisao de comunicacoes tecnicas.
+- Classificação automática de documentos.
+- Previsão de atrasos ou desvios de cronograma.
+- Apoio a orçamentos e comparação de propostas.
+- Análise de registros fotográficos de obras.
+- Geração e revisão de comunicações técnicas.
 
 ```{mermaid}
 %%| fig-align: center
@@ -168,9 +159,9 @@ graph TD
     A[Uso profissional]
     A --> N1[Documentos]
     A --> N2[Cronograma]
-    A --> N3[Orcamentos]
+    A --> N3[Orçamentos]
     A --> N4[Fotos]
-    A --> N5[Comunicacao]
+    A --> N5[Comunicação]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
     classDef styleVerde fill:#E7F2E8,stroke:#90B29A,stroke-width:2px,color:#243B53;
@@ -179,14 +170,14 @@ graph TD
     class N1,N2,N3,N4,N5 styleAreia;
 ```
 
-## Panorama de Aplicacoes
+## Panorama de Aplicações
 
 ```{mermaid}
 %%| fig-align: center
 %%| out-width: 72%
 graph TD
     A[IA no trabalho]
-    A --> N1[Relatorios]
+    A --> N1[Relatórios]
     A --> N2[Checklists]
     A --> N3[Riscos]
     A --> N4[Clientes]
@@ -201,15 +192,15 @@ graph TD
 
 ## Pergunta Para Aquecimento
 
-- Onde voce ja encontrou IA no seu trabalho sem chamar isso de IA?
-- Quais tarefas da sua rotina ainda sao muito manuais?
-- O que mais consome tempo: buscar informacao, escrever, revisar ou decidir?
+- Onde você já encontrou IA no seu trabalho sem chamar isso de IA?
+- Quais tarefas da sua rotina ainda são muito manuais?
+- O que mais consome tempo: buscar informação, escrever, revisar ou decidir?
 
 ```{mermaid}
 %%| fig-align: center
 %%| out-width: 72%
 graph TD
-    A[Rotina profissional] --> B[Buscar informacao]
+    A[Rotina profissional] --> B[Buscar informação]
     A --> C[Escrever]
     A --> D[Revisar]
     A --> E[Decidir]
@@ -221,13 +212,13 @@ graph TD
     class B,C,D,E styleAreia;
 ```
 
-# O Que e IA
+# O Que é IA
 
 ## Conceito Geral
 
-- Inteligencia Artificial e o campo que desenvolve sistemas capazes de executar tarefas que normalmente exigiriam capacidade humana.
-- Essas tarefas incluem perceber, classificar, prever, recomendar, gerar conteudo e apoiar decisoes.
-- IA nao significa consciencia, intencao ou entendimento humano pleno.
+- Inteligência Artificial é o campo que desenvolve sistemas capazes de executar tarefas que normalmente exigiriam capacidade humana.
+- Essas tarefas incluem perceber, classificar, prever, recomendar, gerar conteúdo e apoiar decisões.
+- IA não significa consciência, intenção ou entendimento humano pleno.
 
 ```{mermaid}
 %%| fig-align: center
@@ -236,7 +227,7 @@ graph TD
     A[IA]
     A --> N1[Perceber]
     A --> N2[Classificar]
-    A --> N3[Prever]
+    A --> N3[Prevêr]
     A --> N4[Recomendar]
     A --> N5[Gerar]
     %% Definicao das cores
@@ -247,22 +238,22 @@ graph TD
     class N1,N2,N3,N4,N5 styleAreia;
 ```
 
-## Definicao Pratica Para a Turma
+## Definição Prática Para a Turma
 
-IA e o uso de modelos computacionais para:
+IA é o uso de modelos computacionais para:
 
-- reconhecer padroes;
-- tomar decisoes com base em dados;
+- reconhecer padrões;
+- tomar decisões com base em dados;
 - prever resultados;
-- gerar respostas, textos, imagens ou analises.
+- gerar respostas, textos, imagens ou análises.
 
 ```{mermaid}
 %%| fig-align: center
 %%| out-width: 72%
 graph LR
     A[Dados] --> B[Modelo]
-    B --> C[Padroes]
-    B --> D[Previsoes]
+    B --> C[Padrões]
+    B --> D[Previsões]
     B --> E[Respostas]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
@@ -279,10 +270,10 @@ graph LR
 %%| out-width: 72%
 graph TD
     A[Entrada de dados ou pergunta] --> B[Modelo computacional]
-    B --> C[Reconhece padroes]
+    B --> C[Reconhece padrões]
     B --> D[Compara alternativas]
     B --> E[Gera resposta]
-    C --> F[Decisao ou apoio a decisao]
+    C --> F[Decisão ou apoio a decisão]
     D --> F
     E --> F
     %% Definicao das cores
@@ -293,20 +284,20 @@ graph TD
     class B,C,D,E,F styleAreia;
 ```
 
-## Automacao Nao e a Mesma Coisa que IA
+## Automação Não é a Mesma Coisa que IA
 
-| Automacao | IA |
+| Automação | IA |
 |---|---|
-| Segue regras predefinidas | Aprende padroes ou responde com base em modelos |
-| Se a situacao muda, tende a falhar | Lida melhor com variacao e ambiguidade |
-| Ex.: enviar e-mail ao receber formulario | Ex.: resumir o formulario e sugerir resposta |
+| Segue regras predefinidas | Aprende padrões ou responde com base em modelos |
+| Se a situação muda, tende a falhar | Lida melhor com variação e ambiguidade |
+| Ex.: enviar e-mail ao receber formulário | Ex.: resumir o formulário e sugerir resposta |
 
 ```{mermaid}
 %%| fig-align: center
 %%| out-width: 72%
 graph LR
-    A[Automacao] --> B[Regra fixa]
-    C[IA] --> D[Padrao e contexto]
+    A[Automação] --> B[Regra fixa]
+    C[IA] --> D[Padrão e contexto]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
     classDef styleVerde fill:#E7F2E8,stroke:#90B29A,stroke-width:2px,color:#243B53;
@@ -315,15 +306,15 @@ graph LR
     class B,C,D styleAreia;
 ```
 
-## Automacao x IA x IA Generativa
+## Automação x IA x IA Generativa
 
 ```{mermaid}
 %%| fig-align: center
 %%| out-width: 72%
 graph LR
-    A[Automacao<br/>Regras fixas<br/>Fluxo previsivel] --> B[IA Tradicional<br/>Classifica<br/>Preve]
-    B --> C[Deep Learning<br/>Imagem, audio e texto<br/>Padroes complexos]
-    C --> D[IA Generativa<br/>Conversa<br/>Cria conteudo]
+    A[Automação<br/>Regras fixas<br/>Fluxo previsível] --> B[IA Tradicional<br/>Classifica<br/>Prevê]
+    B --> C[Deep Learning<br/>Imagem, áudio e texto<br/>Padrões complexos]
+    C --> D[IA Generativa<br/>Conversa<br/>Cria conteúdo]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
     classDef styleVerde fill:#E7F2E8,stroke:#90B29A,stroke-width:2px,color:#243B53;
@@ -334,17 +325,17 @@ graph LR
 
 ## Exemplo Simples
 
-Cenario: aprovacoes de documentos.
+Cenário: aprovações de documentos.
 
-- Automacao: se o arquivo estiver com nome incorreto, devolver.
+- Automação: se o arquivo estiver com nome incorreto, devolver.
 - IA tradicional: classificar automaticamente o tipo de documento.
-- IA generativa: ler o documento, resumir pendencias e redigir mensagem ao responsavel.
+- IA generativa: ler o documento, resumir pendências e redigir mensagem ao responsável.
 
 ```{mermaid}
 %%| fig-align: center
 %%| out-width: 72%
 graph LR
-    A[Documento recebido] --> B[Automacao]
+    A[Documento recebido] --> B[Automação]
     A --> C[IA tradicional]
     A --> D[IA generativa]
     %% Definicao das cores
@@ -355,23 +346,23 @@ graph LR
     class B,C,D styleAreia;
 ```
 
-## IA na Engenharia, Arquitetura e Construcao
+## IA na Engenharia, Arquitetura e Construção
 
-- Leitura e organizacao de memorial, contrato e ata.
-- Apoio a compatibilizacao de informacoes.
-- Analise de riscos e nao conformidades.
-- Priorizacao de demandas e pendencias.
-- Comunicacao com clientes, fornecedores e equipes.
+- Leitura e organização de memorial, contrato e ata.
+- Apoio a compatibilização de informações.
+- Análise de riscos e não conformidades.
+- Priorização de demandas e pendências.
+- Comunicação com clientes, fornecedores e equipes.
 
 ```{mermaid}
 %%| fig-align: center
 %%| out-width: 72%
 graph TD
-    A[Construcao]
+    A[Construção]
     A --> N1[Memorial]
     A --> N2[Contratos]
     A --> N3[Riscos]
-    A --> N4[Pendencias]
+    A --> N4[Pendências]
     A --> N5[Clientes]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
@@ -381,9 +372,9 @@ graph TD
     class N1,N2,N3,N4,N5 styleAreia;
 ```
 
-# Evolucao da IA
+# Evolução da IA
 
-## Linha de Evolucao
+## Linha de Evolução
 
 1. Sistemas baseados em regras.
 2. Machine learning.
@@ -405,15 +396,15 @@ graph LR
     class B,C,D styleAreia;
 ```
 
-## Evolucao da IA em Uma Imagem
+## Evolução da IA em Uma Imagem
 
 ```{mermaid}
 %%| fig-align: center
 %%| out-width: 72%
 graph LR
-    A[Regras<br/>Se isto, entao aquilo] --> B[Machine Learning<br/>Aprender com dados]
-    B --> C[Deep Learning<br/>Padroes complexos]
-    C --> D[IA Generativa<br/>Gerar conteudo]
+    A[Regras<br/>Se isto, então aquilo] --> B[Machine Learning<br/>Aprender com dados]
+    B --> C[Deep Learning<br/>Padrões complexos]
+    C --> D[IA Generativa<br/>Gerar conteúdo]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
     classDef styleVerde fill:#E7F2E8,stroke:#90B29A,stroke-width:2px,color:#243B53;
@@ -424,8 +415,8 @@ graph LR
 
 ## Sistemas Baseados em Regras
 
-- Funcionam com regras explicitas do tipo "se... entao...".
-- Sao uteis quando o processo e estavel e bem definido.
+- Funcionam com regras explícitas do tipo "se... então...".
+- São úteis quando o processo é estável e bem definido.
 - Trazem previsibilidade, mas pouca flexibilidade.
 
 ```{mermaid}
@@ -433,7 +424,7 @@ graph LR
 %%| out-width: 72%
 graph TD
     A[Entrada] --> B{Regra}
-    B --> C[Acao prevista]
+    B --> C[Ação prevista]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
     classDef styleVerde fill:#E7F2E8,stroke:#90B29A,stroke-width:2px,color:#243B53;
@@ -445,9 +436,9 @@ graph TD
 
 ## Onde Regras Funcionam Bem
 
-- Fluxos administrativos com criterios fixos.
-- Validacoes de campos em documentos.
-- Regras de negocio simples.
+- Fluxos administrativos com critérios fixos.
+- Validações de campos em documentos.
+- Regras de negócio simples.
 - Rotinas repetitivas com baixa ambiguidade.
 
 ```{mermaid}
@@ -456,9 +447,9 @@ graph TD
 graph TD
     A[Boas regras]
     A --> N1[Fluxos fixos]
-    A --> N2[Validacoes]
-    A --> N3[Negocio simples]
-    A --> N4[Repeticao]
+    A --> N2[Validações]
+    A --> N3[Negócio simples]
+    A --> N4[Repetição]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
     classDef styleVerde fill:#E7F2E8,stroke:#90B29A,stroke-width:2px,color:#243B53;
@@ -470,15 +461,15 @@ graph TD
 ## Limite dos Sistemas de Regras
 
 - Dificuldade para capturar contexto.
-- Alto custo para manter muitas excecoes.
+- Alto custo para manter muitas exceções.
 - Fraco desempenho quando a linguagem humana entra no processo.
 
 ```{mermaid}
 %%| fig-align: center
 %%| out-width: 72%
 graph LR
-    A[Muitas excecoes] --> B[Mais regras]
-    B --> C[Mais manutencao]
+    A[Muitas exceções] --> B[Mais regras]
+    B --> C[Mais manutenção]
     C --> D[Menos flexibilidade]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
@@ -490,17 +481,17 @@ graph LR
 
 ## Machine Learning
 
-- Em vez de programar todas as regras, o sistema aprende padroes a partir de dados.
-- O objetivo e prever, classificar ou pontuar novos casos.
+- Em vez de programar todas as regras, o sistema aprende padrões a partir de dados.
+- O objetivo é prever, classificar ou pontuar novos casos.
 - O desempenho depende da qualidade dos dados e do problema formulado.
 
 ```{mermaid}
 %%| fig-align: center
 %%| out-width: 72%
 graph LR
-    A[Dados historicos] --> B[Modelo]
+    A[Dados históricos] --> B[Modelo]
     B --> C[Classificar]
-    B --> D[Prever]
+    B --> D[Prevêr]
     B --> E[Pontuar]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
@@ -512,16 +503,16 @@ graph LR
 
 ## Exemplos de Machine Learning
 
-- Prever probabilidade de atraso de obra.
-- Classificar chamados de manutencao por prioridade.
+- Prevêr probabilidade de atraso de obra.
+- Classificar chamados de manutenção por prioridade.
 - Detectar desvios em custos ou produtividade.
-- Identificar perfis de ocorrencias recorrentes.
+- Identificar perfis de ocorrências recorrentes.
 
 ```{mermaid}
 %%| fig-align: center
 %%| out-width: 72%
 graph TD
-    A[ML na pratica]
+    A[ML na prática]
     A --> N1[Atraso]
     A --> N2[Prioridade]
     A --> N3[Desvios]
@@ -537,7 +528,7 @@ graph TD
 ## Deep Learning
 
 - Subconjunto de machine learning com redes neurais profundas.
-- Ganha forca em tarefas complexas: imagem, audio, texto e grandes volumes de dados.
+- Ganha força em tarefas complexas: imagem, áudio, texto e grandes volumes de dados.
 - Exige mais dados, infraestrutura e cuidado com interpretabilidade.
 
 ```{mermaid}
@@ -545,9 +536,9 @@ graph TD
 %%| out-width: 72%
 graph LR
     A[Imagem] --> D[Deep Learning]
-    B[Audio] --> D
+    B[Áudio] --> D
     C[Texto] --> D
-    D --> E[Padroes complexos]
+    D --> E[Padrões complexos]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
     classDef styleVerde fill:#E7F2E8,stroke:#90B29A,stroke-width:2px,color:#243B53;
@@ -558,9 +549,9 @@ graph LR
 
 ## IA Generativa
 
-- Nao apenas classifica ou prediz; ela gera conteudo.
-- Pode produzir texto, imagem, codigo, tabelas, resumos e planos.
-- A interacao acontece por linguagem natural, o que amplia o acesso.
+- Não apenas classifica ou prediz; ela gera conteúdo.
+- Pode produzir texto, imagem, código, tabelas, resumos e planos.
+- A interação acontece por linguagem natural, o que amplia o acesso.
 
 ```{mermaid}
 %%| fig-align: center
@@ -569,7 +560,7 @@ graph TD
     A[IA generativa]
     A --> N1[Texto]
     A --> N2[Imagem]
-    A --> N3[Codigo]
+    A --> N3[Código]
     A --> N4[Tabelas]
     A --> N5[Planos]
     %% Definicao das cores
@@ -580,24 +571,24 @@ graph TD
     class N1,N2,N3,N4,N5 styleAreia;
 ```
 
-## Comparacao Rapida
+## Comparação Rápida
 
-| Abordagem | Pergunta central | Saida tipica |
+| Abordagem | Pergunta central | Saída típica |
 |---|---|---|
-| Regras | "Quais regras devo seguir?" | decisao fixa |
-| Machine learning | "Qual padrao existe nos dados?" | previsao ou classificacao |
-| Deep learning | "Como modelar padroes complexos?" | previsao, reconhecimento ou geracao |
-| IA generativa | "Como produzir uma resposta util?" | texto, imagem, codigo, analise |
+| Regras | "Quais regras devo seguir?" | decisão fixa |
+| Machine learning | "Qual padrão existe nos dados?" | previsão ou classificação |
+| Deep learning | "Como modelar padrões complexos?" | previsão, reconhecimento ou geração |
+| IA generativa | "Como produzir uma resposta útil?" | texto, imagem, código, análise |
 
 ```{mermaid}
 %%| fig-align: center
 %%| out-width: 72%
 graph TD
     Q[Complexidade x Flexibilidade]
-    Q --> P1[Regras<br/>Simples e pouco flexiveis]
-    Q --> P2[Machine Learning<br/>Aprendem padroes nos dados]
+    Q --> P1[Regras<br/>Simples e pouco flexíveis]
+    Q --> P2[Machine Learning<br/>Aprendem padrões nos dados]
     Q --> P3[Deep Learning<br/>Mais complexos e poderosos]
-    Q --> P4[IA Generativa<br/>Mais flexivel para uso geral]
+    Q --> P4[IA Generativa<br/>Mais flexível para uso geral]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
     classDef styleVerde fill:#E7F2E8,stroke:#90B29A,stroke-width:2px,color:#243B53;
@@ -606,20 +597,20 @@ graph TD
     class P1,P2,P3,P4 styleAreia;
 ```
 
-## Como Pensar na Evolucao
+## Como Pensar na Evolução
 
 - Regras: boa para processos fixos.
-- Machine learning: boa para previsao e classificacao.
-- Deep learning: boa para padroes complexos em imagem, audio e texto.
-- IA generativa: boa para interacao, sintese e criacao assistida.
+- Machine learning: boa para previsão e classificação.
+- Deep learning: boa para padrões complexos em imagem, áudio e texto.
+- IA generativa: boa para interação, síntese e criação assistida.
 
 ```{mermaid}
 %%| fig-align: center
 %%| out-width: 72%
 graph TD
     A[Processo fixo] --> B[Regras]
-    C[Prever ou classificar] --> D[ML]
-    E[Imagem, audio, texto] --> F[DL]
+    C[Prevêr ou classificar] --> D[ML]
+    E[Imagem, áudio, texto] --> F[DL]
     G[Conversar e gerar] --> H[GenAI]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
@@ -631,10 +622,10 @@ graph TD
 
 # O Que Mudou Com a IA Generativa
 
-## Mudancas de Interface
+## Mudanças de Interface
 
 - A linguagem natural virou interface de uso.
-- O usuario nao precisa conhecer menus complexos ou escrever codigo.
+- O usuário não precisa conhecer menus complexos ou escrever código.
 - A barreira de entrada caiu drasticamente.
 
 ```{mermaid}
@@ -642,7 +633,7 @@ graph TD
 %%| out-width: 72%
 graph LR
     A[Antes: menu e comando] --> B[Curva de aprendizado alta]
-    C[Agora: linguagem natural] --> D[Uso mais acessivel]
+    C[Agora: linguagem natural] --> D[Uso mais acessível]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
     classDef styleVerde fill:#E7F2E8,stroke:#90B29A,stroke-width:2px,color:#243B53;
@@ -657,8 +648,8 @@ graph LR
 %%| fig-align: center
 %%| out-width: 72%
 graph LR
-    A[Antes<br/>Buscar informacao] --> B[Interpretar]
-    B --> C[Rascunhar]
+    A[Antes<br/>Buscar informação] --> B[Interpretar]
+    B --> C[Rascunhár]
     C --> D[Revisar]
     D --> E[Entregar]
 
@@ -674,22 +665,22 @@ graph LR
     class B,C,D,E,F,G,H,I,J styleAreia;
 ```
 
-## Mudancas de Escopo
+## Mudanças de Escopo
 
 - A mesma ferramenta apoia tarefas muito diferentes.
 - O uso deixa de ser especializado e passa a ser generalista.
-- IA entra em redacao, analise, planejamento, estudo e apoio a decisao.
+- IA entra em redação, análise, planejamento, estudo e apoio a decisão.
 
 ```{mermaid}
 %%| fig-align: center
 %%| out-width: 72%
 graph TD
     A[Escopo]
-    A --> N1[Redacao]
-    A --> N2[Analise]
+    A --> N1[Redação]
+    A --> N2[Análise]
     A --> N3[Planejamento]
     A --> N4[Estudo]
-    A --> N5[Decisao]
+    A --> N5[Decisão]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
     classDef styleVerde fill:#E7F2E8,stroke:#90B29A,stroke-width:2px,color:#243B53;
@@ -698,11 +689,11 @@ graph TD
     class N1,N2,N3,N4,N5 styleAreia;
 ```
 
-## Mudancas de Ritmo de Trabalho
+## Mudanças de Ritmo de Trabalho
 
 - Menos tempo gasto em rascunhos iniciais.
 - Mais velocidade para explorar alternativas.
-- Mais capacidade de organizar informacoes dispersas.
+- Mais capacidade de organizar informações dispersas.
 - Mais necessidade de revisar criticamente o resultado.
 
 ```{mermaid}
@@ -710,8 +701,8 @@ graph TD
 %%| out-width: 72%
 graph LR
     A[Menos rascunho] --> B[Mais velocidade]
-    B --> C[Mais exploracao]
-    C --> D[Mais revisao critica]
+    B --> C[Mais exploração]
+    C --> D[Mais revisão crítica]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
     classDef styleVerde fill:#E7F2E8,stroke:#90B29A,stroke-width:2px,color:#243B53;
@@ -723,9 +714,9 @@ graph LR
 ## Oportunidades Reais
 
 - Estruturar relatarios e atas.
-- Elaborar checklists e planos de acao.
-- Traduzir linguagem tecnica para linguagem executiva.
-- Organizar requisitos, pendencias e comunicacoes.
+- Elaborar checklists e planos de ação.
+- Traduzir linguagem técnica para linguagem executiva.
+- Organizar requisitos, pendências e comunicações.
 - Apoiar estudo de normas e documentos extensos.
 
 ```{mermaid}
@@ -733,10 +724,10 @@ graph LR
 %%| out-width: 72%
 graph TD
     A[Oportunidades]
-    A --> N1[Relatorios]
+    A --> N1[Relatórios]
     A --> N2[Checklists]
     A --> N3[Linguagem executiva]
-    A --> N4[Pendencias]
+    A --> N4[Pendências]
     A --> N5[Normas]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
@@ -748,10 +739,10 @@ graph TD
 
 ## Limites Reais
 
-- Pode inventar informacoes.
-- Pode responder com excesso de confianca.
-- Nem sempre conhece o contexto local da organizacao.
-- Sem documentos e criterio humano, a qualidade varia bastante.
+- Pode inventar informações.
+- Pode responder com excesso de confiança.
+- Nem sempre conhece o contexto local da organização.
+- Sem documentos e critério humano, a qualidade varia bastante.
 
 ```{mermaid}
 %%| fig-align: center
@@ -759,7 +750,7 @@ graph TD
 graph TD
     A[Resposta convincente] --> B{Confiar sem revisar?}
     B -- Sim --> C[Risco]
-    B -- Nao --> D[Validacao]
+    B -- Não --> D[Validação]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
     classDef styleVerde fill:#E7F2E8,stroke:#90B29A,stroke-width:2px,color:#243B53;
@@ -771,15 +762,15 @@ graph TD
 
 ## Regra de Ouro
 
-Use IA generativa como apoio de produtividade e raciocinio estruturado, nao como substituta de responsabilidade tecnica.
+Use IA generativa como apoio de produtividade e raciocínio estruturado, não como substituta de responsabilidade técnica.
 
 ```{mermaid}
 %%| fig-align: center
 %%| out-width: 72%
 graph LR
     A[IA] --> B[Rascunho]
-    B --> C[Revisao humana]
-    C --> D[Uso responsavel]
+    B --> C[Revisão humana]
+    C --> D[Uso responsável]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
     classDef styleVerde fill:#E7F2E8,stroke:#90B29A,stroke-width:2px,color:#243B53;
@@ -795,9 +786,9 @@ graph LR
 %%| out-width: 72%
 graph TD
     A[Pedir a IA] --> B[Receber resposta]
-    B --> C{Ha risco tecnico,<br/>contratual ou normativo?}
-    C -- Sim --> D[Revisao humana obrigatoria]
-    C -- Nao --> E[Usar como rascunho produtivo]
+    B --> C{Há risco técnico,<br/>contratual ou normativo?}
+    C -- Sim --> D[Revisão humana obrigatória]
+    C -- Não --> E[Usar como rascunho produtivo]
     D --> F[Ajustar e validar]
     E --> F
     %% Definicao das cores
@@ -811,11 +802,11 @@ graph TD
 
 # LLMs e Multimodalidade
 
-## O Que Sao LLMs
+## O Que São LLMs
 
 - LLM significa Large Language Model.
-- Sao modelos treinados em grande volume de texto para prever e gerar linguagem.
-- O comportamento util aparece em tarefas como resumir, explicar, comparar, transformar e planejar.
+- São modelos treinados em grande volume de texto para prever e gerar linguagem.
+- O comportamento útil aparece em tarefas como resumir, explicar, comparar, transformar e planejar.
 
 ```{mermaid}
 %%| fig-align: center
@@ -835,18 +826,18 @@ graph TD
     class N1,N2,N3,N4,N5 styleAreia;
 ```
 
-## Como o LLM Vira Ferramenta Util
+## Como o LLM Vira Ferramenta Útil
 
 ```{mermaid}
 %%| fig-align: center
 %%| out-width: 72%
 graph LR
-    A[Usuario<br/>Pergunta ou tarefa] --> B[LLM]
+    A[Usuário<br/>Pergunta ou tarefa] --> B[LLM]
     C[Documentos<br/>Contrato, ata, norma] --> B
-    D[Midias<br/>Imagem, audio, planilha] --> B
+    D[Mídias<br/>Imagem, áudio, planilha] --> B
     B --> E[Resumo]
-    B --> F[Analise]
-    B --> G[Plano de acao]
+    B --> F[Análise]
+    B --> G[Plano de ação]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
     classDef styleVerde fill:#E7F2E8,stroke:#90B29A,stroke-width:2px,color:#243B53;
@@ -885,7 +876,7 @@ graph LR
 - Comparar alternativas.
 - Extrair pontos-chave.
 - Criar estrutura inicial de documentos.
-- Apoiar brainstorm e tomada de decisao.
+- Apoiar brainstorm e tomada de decisão.
 
 ```{mermaid}
 %%| fig-align: center
@@ -905,12 +896,12 @@ graph TD
     class N1,N2,N3,N4,N5 styleAreia;
 ```
 
-## O Que Eles Nao Fazem Sozinhos
+## O Que Eles Não Fazem Sozinhos
 
 - Garantir verdade factual.
 - Conhecer automaticamente documentos internos da empresa.
-- Assumir responsabilidade tecnica.
-- Substituir verificacao normativa, contratual ou legal.
+- Assumir responsabilidade técnica.
+- Substituir verificação normativa, contratual ou legal.
 
 ```{mermaid}
 %%| fig-align: center
@@ -918,7 +909,7 @@ graph TD
 graph TD
     A[LLM sozinho] --> B[Sem garantia factual]
     A --> C[Sem contexto interno]
-    A --> D[Sem responsabilidade tecnica]
+    A --> D[Sem responsabilidade técnica]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
     classDef styleVerde fill:#E7F2E8,stroke:#90B29A,stroke-width:2px,color:#243B53;
@@ -927,11 +918,11 @@ graph TD
     class B,C,D styleAreia;
 ```
 
-## O Que e IA Multimodal
+## O Que é IA Multimodal
 
-- E a capacidade de lidar com mais de um tipo de entrada ou saida.
-- Exemplo: texto, imagem, audio, planilha e documento.
-- Isso amplia o uso em ambientes de projeto, obra e manutencao.
+- É a capacidade de lidar com mais de um tipo de entrada ou saída.
+- Exemplo: texto, imagem, áudio, planilha e documento.
+- Isso amplia o uso em ambientes de projeto, obra e manutenção.
 
 ```{mermaid}
 %%| fig-align: center
@@ -940,7 +931,7 @@ graph TD
     A[Multimodal]
     A --> N1[Texto]
     A --> N2[Imagem]
-    A --> N3[Audio]
+    A --> N3[Áudio]
     A --> N4[Planilha]
     A --> N5[Documento]
     %% Definicao das cores
@@ -959,7 +950,7 @@ graph TD
 graph LR
     A[Foto da obra] --> D[Modelo multimodal]
     B[Ata em PDF] --> D
-    C[Planilha de pendencias] --> D
+    C[Planilha de pendências] --> D
     D --> E[Resumo executivo]
     D --> F[Lista de riscos]
     D --> G[Mensagem para cliente]
@@ -971,20 +962,20 @@ graph LR
     class D,B,C,E,F,G styleAreia;
 ```
 
-## Exemplos Multimodais na Construcao
+## Exemplos Multimodais na Construção
 
-- Enviar foto de obra e pedir descricao de nao conformidades observaveis.
+- Enviar foto de obra e pedir descrição de não conformidades observáveis.
 - Anexar memorial ou contrato e pedir resumo executivo.
-- Comparar imagens, tabelas e texto em uma mesma analise.
-- Transformar uma reuniao gravada em ata estruturada.
+- Comparar imagens, tabelas e texto em uma mesma análise.
+- Transformar uma reunião gravada em ata estruturada.
 
 ```{mermaid}
 %%| fig-align: center
 %%| out-width: 72%
 graph LR
-    A[Foto] --> D[Analise multimodal]
+    A[Foto] --> D[Análise multimodal]
     B[Contrato] --> D
-    C[Reuniao gravada] --> D
+    C[Reunião gravada] --> D
     D --> E[Ata, resumo ou risco]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
@@ -994,20 +985,20 @@ graph LR
     class D,B,C,E styleAreia;
 ```
 
-# Demonstracoes Praticas
+# Demonstrações Práticas
 
-## Demo 1 - Relatorio de Obra
+## Demo 1 - Relatório de Obra
 
 Prompt sugerido:
 
-"Atue como engenheiro de obra. A partir das anotacoes abaixo, produza um relatorio diario objetivo com status, pendencias, riscos e proximos passos. Use linguagem profissional e formato em topicos."
+"Atue como engenheiro de obra. A partir das anotações abaixo, produza um relatório diário objetivo com status, pendências, riscos e próximos passos. Use linguagem profissional e formato em tópicos."
 
 ```{mermaid}
 %%| fig-align: center
 %%| out-width: 72%
 graph LR
-    A[Anotacoes de obra] --> B[IA]
-    B --> C[Relatorio diario]
+    A[Anotações de obra] --> B[IA]
+    B --> C[Relatório diário]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
     classDef styleVerde fill:#E7F2E8,stroke:#90B29A,stroke-width:2px,color:#243B53;
@@ -1020,7 +1011,7 @@ graph LR
 
 Prompt sugerido:
 
-"Crie um checklist de inspecao para entrega de ambiente corporativo considerando acabamento, instalacoes, seguranca, documentacao e registro fotografico. Organize por categoria."
+"Crie um checklist de inspeção para entrega de ambiente corporativo considerando acabamento, instalações, segurança, documentação e registro fotográfico. Organize por categoria."
 
 ```{mermaid}
 %%| fig-align: center
@@ -1028,9 +1019,9 @@ Prompt sugerido:
 graph TD
     A[Checklist]
     A --> N1[Acabamento]
-    A --> N2[Instalacoes]
+    A --> N2[Instalações]
     A --> N3[Seguranca]
-    A --> N4[Documentacao]
+    A --> N4[Documentação]
     A --> N5[Fotos]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
@@ -1040,17 +1031,17 @@ graph TD
     class N1,N2,N3,N4,N5 styleAreia;
 ```
 
-## Demo 3 - Analise de Risco
+## Demo 3 - Análise de Risco
 
 Prompt sugerido:
 
-"Com base nesta descricao de obra e cronograma resumido, liste os principais riscos operacionais, seus impactos e acoes preventivas. Priorize por severidade."
+"Com base nesta descrição de obra e cronograma resumido, liste os principais riscos operacionais, seus impactos e ações preventivas. Priorize por severidade."
 
 ```{mermaid}
 %%| fig-align: center
 %%| out-width: 72%
 graph LR
-    A[Descricao da obra] --> C[IA]
+    A[Descrição da obra] --> C[IA]
     B[Cronograma] --> C
     C --> D[Riscos priorizados]
     %% Definicao das cores
@@ -1061,17 +1052,17 @@ graph LR
     class C,B,D styleAreia;
 ```
 
-## Demo 4 - Comunicacao com Cliente
+## Demo 4 - Comunicação com Cliente
 
 Prompt sugerido:
 
-"Reescreva a mensagem abaixo para um cliente nao tecnico, mantendo transparencia, clareza e foco em solucao. Evite jargao excessivo."
+"Reescreva a mensagem abaixo para um cliente não técnico, mantendo transparência, clareza e foco em solução. Evite jargão excessivo."
 
 ```{mermaid}
 %%| fig-align: center
 %%| out-width: 72%
 graph LR
-    A[Texto tecnico] --> B[IA]
+    A[Texto técnico] --> B[IA]
     B --> C[Mensagem clara ao cliente]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
@@ -1086,8 +1077,8 @@ graph LR
 - Clareza do pedido.
 - Nivel de contexto fornecido.
 - Formato solicitado.
-- Qualidade da saida.
-- Necessidade de revisao humana.
+- Qualidade da saída.
+- Necessidade de revisão humana.
 
 ```{mermaid}
 %%| fig-align: center
@@ -1098,7 +1089,7 @@ graph TD
     A --> N2[Contexto]
     A --> N3[Formato]
     A --> N4[Qualidade]
-    A --> N5[Revisao]
+    A --> N5[Revisão]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
     classDef styleVerde fill:#E7F2E8,stroke:#90B29A,stroke-width:2px,color:#243B53;
@@ -1107,7 +1098,7 @@ graph TD
     class N1,N2,N3,N4,N5 styleAreia;
 ```
 
-## Estrutura de Observacao das Demos
+## Estrutura de Observação das Demos
 
 ```{mermaid}
 %%| fig-align: center
@@ -1116,7 +1107,7 @@ graph LR
     A[Prompt] --> B[Contexto]
     B --> C[Formato]
     C --> D[Resposta]
-    D --> E[Revisao humana]
+    D --> E[Revisão humana]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
     classDef styleVerde fill:#E7F2E8,stroke:#90B29A,stroke-width:2px,color:#243B53;
@@ -1129,20 +1120,20 @@ graph LR
 
 # Fechamento
 
-## Sintese da Aula
+## Síntese da Aula
 
-- IA existe ha muito tempo e nao comecou com o ChatGPT.
-- O salto recente foi a combinacao de modelos poderosos com interface simples.
+- IA existe há muito tempo e não começou com o ChatGPT.
+- O salto recente foi a combinação de modelos poderosos com interface simples.
 - IA generativa ampliou o acesso e o tipo de tarefa que pode ser apoiada.
-- Valor real depende de contexto, criterio e revisao.
+- Valor real depende de contexto, critério e revisão.
 
 ```{mermaid}
 %%| fig-align: center
 %%| out-width: 72%
 graph LR
-    A[IA historica] --> B[IA acessivel]
+    A[IA histórica] --> B[IA acessível]
     B --> C[Uso ampliado]
-    C --> D[Revisao critica]
+    C --> D[Revisão crítica]
     %% Definicao das cores
     classDef styleAzul fill:#DCEAF4,stroke:#7FA6BF,stroke-width:2px,color:#243B53;
     classDef styleVerde fill:#E7F2E8,stroke:#90B29A,stroke-width:2px,color:#243B53;
@@ -1153,7 +1144,7 @@ graph LR
 
 ## Ponte Para a Aula 2
 
-Na proxima aula, o foco sera transformar pedidos vagos em interacoes uteis:
+Na próxima aula, o foco sera transformar pedidos vagos em interações úteis:
 
 - como escrever prompts melhores;
 - como avaliar respostas;
@@ -1175,7 +1166,7 @@ graph LR
 
 ## Mensagem Final
 
-A pergunta mais util nao e "a IA substitui profissionais?", mas sim "como profissionais melhores usam IA para trabalhar com mais qualidade, velocidade e criterio?"
+A pergunta mais útil não é "a IA substitui profissionais?", mas sim "como profissionais melhores usam IA para trabalhar com mais qualidade, velocidade e critério?"
 
 ```{mermaid}
 %%| fig-align: center
