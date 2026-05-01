@@ -1,0 +1,425 @@
+---
+title: "Aula 3 - Agentes de IA, Automacao e Estrategia de Adocao"
+subtitle: "Da conversa com IA ao processo organizacional"
+author: "Material didatico"
+format:
+  pptx:
+    slide-level: 2
+    incremental: false
+  pdf:
+    toc: true
+    number-sections: false
+lang: pt-BR
+---
+
+# Visao Geral
+
+## Objetivo da Aula
+
+Entender como a IA sai do uso pontual em chat e passa a compor processos, automacoes e solucoes organizacionais com supervisao humana.
+
+## Resultados Esperados
+
+Ao final desta aula, a turma deve ser capaz de:
+
+- diferenciar chatbot, RAG, copiloto e agente de IA;
+- entender os componentes basicos de um agente;
+- identificar casos de uso viaveis na construcao;
+- avaliar riscos, governanca e limites de automacao;
+- priorizar oportunidades de adocao com criterio de negocio.
+
+## Agenda
+
+1. Do chatbot ao agente.
+2. O que sao agentes de IA.
+3. Exemplos na construcao.
+4. Automacao de processos com IA.
+5. Riscos, etica e governanca.
+6. Como escolher bons casos de uso.
+7. Encerramento da disciplina.
+
+# Do Chatbot ao Agente
+
+## Escada de Maturidade
+
+- Chatbot: responde perguntas.
+- RAG: responde com base em documentos.
+- Copiloto: apoia uma tarefa dentro do fluxo de trabalho.
+- Agente: executa etapas, usa ferramentas e conduz parte do processo.
+
+## Chatbot
+
+- Bom para pergunta e resposta.
+- Forte em explicacao, resumo e redacao.
+- Normalmente depende do usuario conduzir cada passo.
+
+## RAG
+
+- Acrescenta base documental.
+- Melhora contexto e rastreabilidade.
+- Ainda e, em geral, reativo: responde ao que foi perguntado.
+
+## Copiloto
+
+- Atua ao lado do profissional.
+- Sugere, acelera e organiza trabalho.
+- Normalmente permanece dentro de uma ferramenta ou etapa especifica.
+
+## Agente
+
+- Recebe um objetivo.
+- Decide etapas intermediarias.
+- Consulta fontes ou ferramentas.
+- Produz saidas acionaveis.
+- Pode pedir validacao humana antes de concluir.
+
+## Diferenca Essencial
+
+A pergunta pratica e esta:
+
+- o sistema apenas responde?
+- ou ele ajuda a executar um fluxo com objetivo, contexto, ferramentas e criterios?
+
+# O Que Sao Agentes de IA
+
+## Definicao Pratica
+
+Um agente de IA e um sistema orientado a objetivo que usa modelo de linguagem, contexto e ferramentas para executar ou coordenar etapas de uma tarefa.
+
+## Componentes Basicos
+
+- LLM.
+- Objetivo.
+- Contexto.
+- Ferramentas.
+- Memoria.
+- Acoes.
+- Validacao humana.
+
+## LLM
+
+- Interpreta instrucoes.
+- Planeja proximos passos.
+- Gera resposta ou acao intermediaria.
+- Nao basta sozinho para virar agente confiavel.
+
+## Objetivo
+
+Exemplos de objetivo:
+
+- consolidar atas da semana;
+- comparar propostas recebidas;
+- gerar relatorio semanal de obra;
+- monitorar pendencias criticas.
+
+## Contexto
+
+- dados do projeto;
+- historico recente;
+- documentos relevantes;
+- parametros de risco;
+- padroes de saida esperados.
+
+## Ferramentas
+
+Um agente pode usar ferramentas como:
+
+- leitura de documentos;
+- busca em base interna;
+- planilhas;
+- e-mail;
+- sistemas corporativos;
+- fluxos em Power Automate, Make, Zapier ou n8n.
+
+## Memoria
+
+- Pode guardar historico de interacoes ou estado do processo.
+- Ajuda em tarefas recorrentes e acompanhamento continuo.
+- Precisa de criterio para nao acumular ruido ou dado sensivel sem controle.
+
+## Acoes
+
+Exemplos:
+
+- gerar minuta de e-mail;
+- atualizar planilha;
+- consolidar informacoes;
+- abrir tarefa;
+- classificar pendencias;
+- encaminhar para revisao humana.
+
+## Validacao Humana
+
+Ponto critico em ambientes profissionais:
+
+- quem aprova a saida final;
+- em que etapa o humano intervem;
+- o que pode ser automatizado sem risco excessivo;
+- o que exige responsabilidade tecnica formal.
+
+# Exemplos de Agentes na Construcao
+
+## Agente de Atas de Reuniao
+
+Fluxo possivel:
+
+1. receber transcricao ou anotacoes;
+2. extrair decisoes, pendencias, responsaveis e prazos;
+3. gerar ata padronizada;
+4. enviar para revisao;
+5. arquivar em base de consulta.
+
+## Agente de Relatorio Semanal de Obra
+
+Entradas possiveis:
+
+- registros diaros;
+- fotos;
+- cronograma resumido;
+- apontamentos de campo.
+
+Saidas possiveis:
+
+- relatorio consolidado;
+- riscos da semana;
+- desvios relevantes;
+- proximas acoes.
+
+## Agente de Analise de Propostas
+
+- organiza propostas recebidas;
+- compara escopo, prazo, custo e riscos;
+- aponta lacunas ou inconsistencias;
+- gera quadro comparativo para decisao humana.
+
+## Agente de Manutencao Predial
+
+- recebe chamado;
+- classifica prioridade;
+- consulta historico e manual;
+- sugere procedimento inicial;
+- encaminha para equipe responsavel.
+
+## Agente de Documentacao Tecnica
+
+- consolida memoriais, e-mails e revisoes;
+- identifica versoes conflitantes;
+- prepara sintese executiva;
+- organiza base para consulta posterior.
+
+## Agente de Acompanhamento de Riscos
+
+- acompanha eventos e pendencias;
+- cruza sinais de atraso, custo ou fornecimento;
+- gera alertas priorizados;
+- sugere plano de mitigacao.
+
+# Automacao de Processos com IA
+
+## Quando Faz Sentido Automatizar
+
+- tarefa frequente;
+- entrada relativamente padronizada;
+- saida esperada conhecida;
+- alto consumo de tempo manual;
+- baixo ou medio risco com revisao humana.
+
+## Tarefas Repetitivas com Potencial
+
+- classificar e organizar documentos;
+- consolidar informacoes de varias fontes;
+- redigir primeira versao de comunicacoes;
+- gerar checklists e resumos recorrentes;
+- registrar e distribuir pendencias.
+
+## Entradas e Saidas Claras
+
+Automacao funciona melhor quando se conhece:
+
+- de onde vem a informacao;
+- o que a IA deve produzir;
+- onde o resultado sera usado;
+- quem revisa antes da execucao final.
+
+## Integracoes Tipicas
+
+- e-mail;
+- planilhas;
+- pastas de documentos;
+- formularios;
+- sistemas internos;
+- plataformas de automacao.
+
+## Ferramentas Conceituais
+
+Exemplos de ecossistema de automacao:
+
+- Power Automate;
+- Make;
+- Zapier;
+- n8n.
+
+## Exemplo de Fluxo Automatizado
+
+Cenario: reuniao semanal de obra.
+
+1. gravacao vira transcricao;
+2. IA extrai decisoes e pendencias;
+3. gera ata em modelo padrao;
+4. envia para validacao do coordenador;
+5. publica versao aprovada na pasta do projeto.
+
+## Regra Pratica
+
+Nao comece automatizando o processo mais critico e caotico.
+
+Comece por fluxos:
+
+- repetitivos;
+- com baixo risco relativo;
+- com dados acessiveis;
+- com beneficio claro e medivel.
+
+# Riscos, Etica e Governanca
+
+## Principais Riscos
+
+- alucinacao;
+- vazamento de dados;
+- uso de documento desatualizado;
+- viés;
+- falsa sensacao de confianca;
+- automacao de erro em escala.
+
+## Alucinacao
+
+- A IA pode responder algo plausivel, mas incorreto.
+- Quanto maior a confianca cega, maior o risco operacional.
+- Em contratos, normas e decisoes tecnicas, isso e especialmente sensivel.
+
+## Privacidade e Seguranca da Informacao
+
+Perguntas obrigatorias:
+
+- que dados estao sendo enviados para a ferramenta?
+- ha informacoes sensiveis ou sigilosas?
+- existe politica interna sobre uso de IA?
+- qual ambiente e autorizado para esse tipo de dado?
+
+## Responsabilidade Tecnica
+
+- IA apoia, mas nao assume responsabilidade profissional.
+- Pareceres, laudos, validacoes e decisoes formais exigem responsavel humano.
+- O uso de IA precisa estar subordinado a processo e criterio tecnico.
+
+## Viés
+
+- Modelos podem refletir vieses presentes em dados e linguagem.
+- Isso afeta priorizacao, avaliacao e recomendacoes.
+- E preciso revisar saidas com atencao para parcialidade e omissoes.
+
+## Governanca Minima
+
+Uma adocao seria de IA precisa definir:
+
+- casos de uso permitidos;
+- tipos de dado proibidos ou restritos;
+- ferramentas homologadas;
+- etapas de validacao humana;
+- registro de versoes e fontes;
+- criterios de auditoria e responsabilizacao.
+
+## Principio Operacional
+
+Quanto maior o impacto do erro, maior deve ser o controle humano, a rastreabilidade e a formalizacao do processo.
+
+# Como Escolher Bons Casos de Uso
+
+## Seis Perguntas de Priorizacao
+
+1. A tarefa acontece com frequencia?
+2. Consome muito tempo?
+3. O erro teria impacto alto ou controlavel?
+4. Existem dados e documentos disponiveis?
+5. A saida esperada e relativamente padronizavel?
+6. A revisao humana e viavel dentro do fluxo?
+
+## Critérios de Escolha
+
+- frequencia da tarefa;
+- tempo gasto;
+- impacto no negocio;
+- risco se a IA errar;
+- disponibilidade de dados;
+- facilidade de implementacao;
+- necessidade de revisao humana.
+
+## Matriz Simples de Priorizacao
+
+Comece por casos com:
+
+- alta frequencia;
+- alto consumo de tempo;
+- risco baixo ou moderado;
+- dados acessiveis;
+- resultado verificavel.
+
+## Maus Primeiros Casos de Uso
+
+Evite comecar por:
+
+- decisoes irreversiveis;
+- documentos juridicos sem revisao;
+- processos sem dados organizados;
+- fluxos confusos ou sem dono;
+- tarefas em que ninguem consegue definir o que e uma boa saida.
+
+## Bons Primeiros Casos de Uso
+
+Exemplos:
+
+- resumo de atas;
+- geracao de relatorio semanal;
+- triagem de documentos;
+- classificacao de chamados;
+- comparacao inicial de propostas;
+- montagem de checklists e planos de acao.
+
+# Atividade Final
+
+## Oficina de Caso de Uso
+
+Cada grupo deve propor um caso de uso de IA para seu contexto profissional.
+
+A apresentacao deve conter:
+
+1. problema atual;
+2. tarefa escolhida;
+3. tipo de IA mais adequado: chatbot, RAG, copiloto ou agente;
+4. entradas necessarias;
+5. saida esperada;
+6. riscos principais;
+7. ponto de validacao humana;
+8. beneficio esperado.
+
+## Pergunta de Fechamento
+
+Se voce tivesse que implementar apenas um caso de uso nos proximos 30 dias, qual escolheria e por que?
+
+# Encerramento da Disciplina
+
+## Mensagens-Chave
+
+- IA generativa amplia produtividade, mas exige criterio.
+- Prompts melhores produzem respostas melhores.
+- RAG conecta IA ao conhecimento documental real.
+- Agentes e automacoes fazem a IA entrar no processo.
+- Adocao madura depende de governanca, priorizacao e revisao humana.
+
+## Visao Final
+
+A oportunidade mais realista nao e substituir especialistas, mas aumentar a capacidade de equipes tecnicas, administrativas e de gestao com apoio inteligente e processo bem desenhado.
+
+## Proximo Passo Recomendado
+
+Sair da aula com um piloto simples, mensuravel e seguro costuma gerar mais aprendizado do que tentar uma transformacao ampla logo no inicio.

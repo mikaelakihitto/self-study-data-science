@@ -1,0 +1,434 @@
+---
+title: "Aula 2 - Prompting e RAG"
+subtitle: "Usando IA com contexto e documentos"
+author: "Material didatico"
+format:
+  pptx:
+    slide-level: 2
+    incremental: false
+  pdf:
+    toc: true
+    number-sections: false
+lang: pt-BR
+---
+
+# Visao Geral
+
+## Objetivo da Aula
+
+Aprender a usar IA generativa de forma mais eficaz por meio de prompts melhores e entender como conectar a IA a documentos reais com RAG.
+
+## Resultados Esperados
+
+Ao final desta aula, a turma deve ser capaz de:
+
+- escrever prompts mais claros, completos e verificaveis;
+- escolher formatos de resposta adequados a cada tarefa;
+- avaliar qualidade e limite das respostas da IA;
+- entender o que e RAG em nivel conceitual;
+- reconhecer casos de uso de RAG em contratos, normas, atas e relatorios.
+
+## Agenda
+
+1. Revisao rapida da aula anterior.
+2. Engenharia de prompts.
+3. Tipos de prompts uteis.
+4. Pratica de prompting.
+5. Introducao ao RAG.
+6. Como o RAG funciona em alto nivel.
+7. Aplicacoes na construcao.
+
+# Revisao da Aula 1
+
+## O Que Ja Foi Construido
+
+- IA nao se resume a IA generativa.
+- LLMs tornaram a IA acessivel em linguagem natural.
+- Oportunidade sem criterio vira risco.
+- Revisao humana continua obrigatoria em contextos tecnicos.
+
+## Tres Alertas Importantes
+
+- Resposta fluida nao e garantia de verdade.
+- Prompt ruim gera resposta ruim ou vaga.
+- Sem contexto documental, a IA opera com conhecimento generico.
+
+# Engenharia de Prompts
+
+## O Que e um Bom Prompt
+
+Um bom prompt reduz ambiguidade e aumenta a chance de uma resposta util.
+
+Ele deixa claro:
+
+- quem a IA deve representar;
+- qual e a tarefa;
+- qual e o contexto;
+- qual formato de saida e esperado;
+- quais criterios e restricoes precisam ser respeitados.
+
+## Estrutura Recomendada
+
+Use este modelo mental:
+
+- Papel.
+- Contexto.
+- Tarefa.
+- Formato.
+- Criterios.
+- Restricoes.
+
+## Exemplo Fraco
+
+"Faça um relatorio sobre a obra."
+
+Problemas:
+
+- nao define objetivo;
+- nao informa publico;
+- nao traz contexto;
+- nao define formato;
+- nao estabelece criterio de qualidade.
+
+## Exemplo Melhorado
+
+"Atue como coordenador de obra. Com base nas anotacoes abaixo, produza um relatorio executivo para o cliente com ate 300 palavras. Organize em status geral, avancos, pendencias, riscos e proximos passos. Use linguagem clara, evite jargoes e destaque pontos que exigem decisao."
+
+## O Papel Importa
+
+Ao definir o papel, voce orienta o tipo de linguagem e o foco da resposta.
+
+Exemplos:
+
+- engenheiro de planejamento;
+- gerente de obras;
+- analista de contratos;
+- assistente de manutencao;
+- redator tecnico.
+
+## Contexto e o Multiplicador de Qualidade
+
+Quanto melhor o contexto, melhor a resposta.
+
+Contexto pode incluir:
+
+- objetivo do documento;
+- perfil do leitor;
+- dados do projeto;
+- restricoes de prazo ou custo;
+- trechos de atas, contratos, normas ou e-mails.
+
+## Formato Tambem e Instrucao
+
+Exemplos de formato:
+
+- tabela comparativa;
+- checklist;
+- e-mail;
+- sumario executivo;
+- plano de acao;
+- lista priorizada;
+- matriz risco x impacto.
+
+## Criterios e Restricoes
+
+Criterios ajudam a IA a acertar o que importa.
+
+Exemplos:
+
+- seja objetivo;
+- use linguagem nao tecnica;
+- priorize riscos altos;
+- cite apenas informacoes presentes no texto;
+- aponte incertezas;
+- nao invente valores ausentes.
+
+# Tipos de Prompts Uteis
+
+## Resumo
+
+Uso: condensar documentos extensos.
+
+Exemplo:
+
+"Resuma esta ata em no maximo 8 pontos, destacando decisoes, responsaveis e prazos."
+
+## Analise
+
+Uso: identificar riscos, lacunas, inconsistencias ou implicacoes.
+
+Exemplo:
+
+"Analise o texto abaixo e identifique riscos contratuais, ambiguidades e pontos que exigem validacao tecnica."
+
+## Comparacao
+
+Uso: avaliar alternativas.
+
+Exemplo:
+
+"Compare as duas propostas abaixo em prazo, escopo, risco, custo e clareza contratual. Entregue em tabela e finalize com recomendacao justificada."
+
+## Checklist
+
+Uso: padronizar verificacao.
+
+Exemplo:
+
+"Crie um checklist de vistoria de entrega com itens, criterio de aprovacao e campo de observacao."
+
+## Transformacao de Linguagem
+
+Uso: adaptar mensagem ao publico.
+
+Exemplo:
+
+"Reescreva este parecer tecnico para um cliente nao especialista, mantendo precisao e clareza."
+
+## Simulacao de Papel
+
+Uso: explorar um ponto de vista profissional.
+
+Exemplo:
+
+"Atue como gestor de obras e proponha uma resposta para o fornecedor diante do atraso descrito abaixo."
+
+## Plano de Acao
+
+Uso: sair da analise para a execucao.
+
+Exemplo:
+
+"Com base nos problemas listados, monte um plano de acao com prioridade, responsavel, prazo sugerido e dependencia."
+
+# Pratica de Prompting
+
+## Processo Simples de Refinamento
+
+1. Comece com um pedido inicial.
+2. Observe lacunas da resposta.
+3. Adicione contexto.
+4. Defina formato.
+5. Estabeleca criterios.
+6. Peca revisao ou segunda versao.
+
+## Exercicio 1 - Melhorar Prompt Generico
+
+Prompt inicial:
+
+"Analise este documento."
+
+Desafio:
+
+- definir papel;
+- dizer que documento e;
+- informar objetivo da analise;
+- definir saida;
+- incluir criterio de avaliacao.
+
+## Exercicio 2 - Situacao de Obra
+
+Cenario:
+
+- atraso de fornecedor;
+- impacto no cronograma;
+- cliente pressionando por resposta.
+
+Tarefa:
+
+Criar um prompt para gerar:
+
+- resumo executivo;
+- mensagem ao cliente;
+- plano de mitigacao.
+
+## Exercicio 3 - Avaliar Resposta da IA
+
+Criticos que a turma deve aplicar:
+
+- a resposta atende ao pedido?
+- ha suposicoes nao declaradas?
+- faltam dados importantes?
+- a linguagem esta adequada ao publico?
+- o formato facilita a tomada de decisao?
+
+## Heuristica Pratica
+
+Se a resposta vier vaga, normalmente faltou uma destas cinco coisas:
+
+- contexto;
+- objetivo;
+- formato;
+- criterio;
+- restricao.
+
+# Introducao ao RAG
+
+## O Que e RAG
+
+RAG significa Retrieval-Augmented Generation.
+
+Em termos simples:
+
+- a IA busca informacoes relevantes em documentos;
+- depois gera a resposta com base nesse material recuperado.
+
+## Por Que RAG Importa
+
+Um LLM sozinho responde com base no que aprendeu no treinamento geral.
+
+Com RAG, ele passa a responder com apoio de documentos especificos, como:
+
+- contratos;
+- normas;
+- atas;
+- memoriais;
+- relatorios;
+- manuais;
+- procedimentos internos.
+
+## LLM Sozinho x LLM com RAG
+
+| LLM sozinho | LLM com RAG |
+|---|---|
+| Responde com conhecimento generico | Responde com base em documentos relevantes |
+| Pode soar convincente sem fonte | Pode apontar origem e trechos usados |
+| Nao conhece automaticamente sua base interna | Pode consultar base documental definida |
+| Serve bem para apoio geral | Serve melhor para apoio contextualizado |
+
+## O Que o RAG Nao Resolve Automaticamente
+
+- Documento ruim continua gerando resposta ruim.
+- Documento desatualizado gera risco.
+- Busca mal configurada pode recuperar trechos irrelevantes.
+- Validacao humana continua necessaria.
+
+# Como o RAG Funciona
+
+## Fluxo em Alto Nivel
+
+1. Reunir documentos.
+2. Dividir em trechos menores.
+3. Indexar para busca.
+4. Receber a pergunta do usuario.
+5. Recuperar os trechos mais relevantes.
+6. Gerar resposta usando pergunta + trechos.
+7. Apresentar resposta com rastreabilidade sempre que possivel.
+
+## Documentos de Entrada
+
+Exemplos:
+
+- contratos de prestacao de servico;
+- normas tecnicas;
+- atas de reuniao;
+- cadernos de especificacao;
+- relatorios fotograficos;
+- planos de manutencao.
+
+## Divisao em Trechos
+
+- Documentos grandes sao quebrados em partes menores.
+- Isso melhora a busca e reduz ruido.
+- O tamanho do trecho influencia qualidade e contexto recuperado.
+
+## Busca por Relevancia
+
+- O sistema tenta encontrar trechos mais proximos da pergunta.
+- Nem sempre a palavra exata importa; o sentido tambem conta.
+- A qualidade da recuperacao define boa parte da qualidade final.
+
+## Resposta Baseada em Fontes
+
+Uma boa experiencia de RAG deve permitir:
+
+- responder com base no material consultado;
+- mostrar de onde a informacao veio;
+- reduzir respostas inventadas;
+- apoiar auditoria e confianca.
+
+## Rastreabilidade e Governanca
+
+Em contexto profissional, especialmente na construcao, importa saber:
+
+- qual documento foi usado;
+- qual versao foi consultada;
+- qual trecho sustentou a resposta;
+- quem validou a saida.
+
+# Aplicacoes de RAG na Construcao
+
+## Consulta a Contratos
+
+- localizar clausulas de prazo, multa, escopo e responsabilidades;
+- responder perguntas objetivas com base no documento;
+- acelerar preparacao de reunioes e negociacoes.
+
+## Consulta a Normas
+
+- navegar por grandes volumes de texto tecnico;
+- localizar requisitos especificos;
+- apoiar interpretacao inicial antes da analise especializada.
+
+## Assistente de Atas
+
+- responder o que foi decidido;
+- listar pendencias e responsaveis;
+- recuperar historico de reunioes anteriores.
+
+## Base de Conhecimento de Obras
+
+- registrar aprendizados e ocorrencias recorrentes;
+- consultar solucoes adotadas em projetos passados;
+- reduzir dependencia de memoria individual da equipe.
+
+## Manuais e Operacao Predial
+
+- buscar procedimentos de manutencao;
+- responder duvidas operacionais;
+- apoiar equipes de campo com consulta rapida.
+
+## Documentacao de Projetos
+
+- integrar memorial, especificacoes, atas e comunicacoes;
+- responder perguntas sobre escopo e premissas;
+- reduzir retrabalho na busca de informacoes dispersas.
+
+# Atividade em Sala
+
+## Oficina Rapida
+
+Em grupos, escolham um destes cenarios:
+
+- consulta a contrato;
+- resumo de ata;
+- comparacao de propostas;
+- consulta a norma;
+- assistente interno de obra.
+
+## Entrega Esperada
+
+Cada grupo deve apresentar:
+
+1. um prompt bem estruturado;
+2. o tipo de documento que daria contexto;
+3. o formato ideal da resposta;
+4. os riscos se a IA errar;
+5. como seria feita a validacao humana.
+
+# Fechamento
+
+## Sintese da Aula
+
+- Prompting melhorou quando saimos de pedidos vagos para instrucoes claras.
+- Contexto, formato e criterio elevam muito a utilidade da resposta.
+- RAG conecta IA a documentos reais e torna a resposta mais rastreavel.
+- Mesmo com RAG, qualidade documental e validacao humana continuam centrais.
+
+## Ponte Para a Aula 3
+
+Na proxima aula, o foco sera sair do chat e entrar no processo:
+
+- agentes de IA;
+- automacao de fluxos;
+- governanca, risco e estrategia de adocao.

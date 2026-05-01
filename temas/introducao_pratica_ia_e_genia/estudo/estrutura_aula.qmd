@@ -1,0 +1,198 @@
+# Estrutura das 3 aulas — Introdução à Inteligência Artificial
+
+## Informações gerais
+
+Disciplina: Introdução à Inteligência Artificial
+Curso: Pós-graduação em Tecnologia, Gestão e Desempenho das Construções
+Público-alvo: alunos de pós-graduação das áreas de engenharia, arquitetura, construção civil, gestão de obras e áreas correlatas.
+Perfil dos alunos: profissionais não técnicos ou em início de contato com Inteligência Artificial, com foco em aplicação prática no contexto profissional.
+Carga horária total: 12 horas
+Formato: 3 aulas de 4 horas
+Abordagem: conceitual, prática e aplicada, sem exigência de programação.
+Foco da disciplina: IA no geral, IA generativa, LLMs, prompting, RAG, agentes de IA, automação e aplicações na construção civil.
+
+## Objetivo geral
+
+Apresentar os fundamentos da Inteligência Artificial e suas aplicações contemporâneas, com foco em IA generativa, grandes modelos de linguagem, RAG e agentes de IA, capacitando os alunos a compreender, utilizar e avaliar essas tecnologias no contexto da engenharia, arquitetura, gestão de obras e desempenho das construções.
+
+### Objetivos específicos
+
+Ao final da disciplina, espera-se que o aluno seja capaz de:
+
+- Compreender o que é Inteligência Artificial e como ela evoluiu até a IA generativa.
+- Diferenciar automação, IA tradicional, machine learning, deep learning e IA generativa.
+- Entender o papel dos LLMs, como ChatGPT, Gemini, Claude e Copilot.
+- Utilizar IA generativa para tarefas de produtividade, análise, comunicação e apoio à decisão.
+- Criar prompts mais claros, contextualizados e úteis.
+- Compreender o conceito de RAG e sua aplicação com documentos, normas, contratos, atas e relatórios.
+- Entender o conceito de agentes de IA e automação de fluxos de trabalho.
+- Identificar oportunidades, riscos e limites do uso de IA no setor da construção.
+- Propor um caso de uso prático de IA aplicado ao contexto profissional.
+- Competências desenvolvidas
+- Alfabetização em Inteligência Artificial.
+- Uso crítico de ferramentas de IA generativa.
+- Formulação de prompts.
+- Análise de aplicações de IA em processos profissionais.
+- Pensamento estratégico sobre adoção tecnológica.
+- Avaliação de riscos, ética e responsabilidade no uso de IA.
+- Identificação de oportunidades de automação e ganho de produtividade.
+
+
+## Aula 1 — Da IA tradicional à IA generativa
+
+**Objetivo:** entender o que é IA, como ela evoluiu e o que mudou com a IA generativa.
+
+### Bloco 1 — Abertura: IA não começou com ChatGPT
+
+* IA no cotidiano: Waze, Netflix, banco, reconhecimento facial, tradutor.
+* IA como tecnologia já presente em sistemas e processos.
+
+### Bloco 2 — O que é Inteligência Artificial?
+
+* Conceito geral de IA.
+* Diferença entre automação simples e IA.
+* Exemplos na engenharia, arquitetura e construção.
+
+### Bloco 3 — Evolução da IA
+
+* Sistemas baseados em regras.
+* Machine Learning.
+* Deep Learning.
+* IA generativa.
+
+### Bloco 4 — O que mudou com a IA generativa?
+
+* Interface em linguagem natural.
+* Uso por pessoas não técnicas.
+* Capacidade de gerar texto, imagem, código, análise e planos.
+* Uso generalista em várias tarefas.
+* Entrada da IA no trabalho cotidiano.
+
+### Bloco 5 — O que são LLMs, IA multimodal?
+
+* Conceito de grandes modelos de linguagem.
+* ChatGPT, Gemini, Claude, Copilot.
+* Capacidades e limitações.
+
+### Bloco 6 — Demonstração prática
+
+* Uso de IA para relatório.
+* Checklist.
+* Análise de risco.
+* Comunicação com cliente.
+
+---
+
+## Aula 2 — Prompting e RAG: usando IA com contexto e documentos
+
+**Objetivo:** aprender a usar IA generativa de forma mais eficaz e entender como conectar IA a documentos reais.
+
+### Bloco 1 — Revisão da Aula 1
+
+* IA tradicional x IA generativa.
+* LLMs.
+* Limitações e riscos.
+
+### Bloco 2 — Engenharia de prompts
+
+* O que é um bom prompt.
+* Papel, contexto, tarefa, formato, critérios e restrições.
+* Exemplos bons e ruins.
+
+### Bloco 3 — Tipos de prompts úteis
+
+* Resumo.
+* Análise.
+* Comparação.
+* Checklist.
+* Transformação de linguagem.
+* Simulação de papéis.
+* Plano de ação.
+
+### Bloco 4 — Prática de prompting
+
+* Melhorar prompts genéricos.
+* Criar prompts para situações de obra, projeto e gestão.
+* Avaliar qualidade das respostas.
+
+### Bloco 5 — Introdução ao RAG
+
+* O que é Retrieval-Augmented Generation.
+* Diferença entre LLM sozinho e LLM com documentos.
+* IA respondendo com base em contratos, normas, atas, memoriais e relatórios.
+
+### Bloco 6 — Como funciona RAG em alto nível
+
+* Documentos.
+* Divisão em trechos.
+* Busca por relevância.
+* Resposta baseada em fontes.
+* Importância da rastreabilidade.
+
+### Bloco 7 — Aplicações de RAG na construção
+
+* Consulta a contratos.
+* Consulta a normas.
+* Assistente de atas.
+* Base de conhecimento de obras.
+* Manuais de manutenção.
+* Documentação de projetos.
+
+---
+
+## Aula 3 — Agentes de IA, automação e estratégia de adoção
+
+**Objetivo:** entender como IA pode sair do chat e virar processo, automação e solução organizacional.
+
+### Bloco 1 — Do chatbot ao agente
+
+* Chatbot: responde.
+* RAG: responde com documentos.
+* Agente: executa etapas de um processo.
+* Diferença entre assistente, copiloto e agente.
+
+### Bloco 2 — O que são agentes de IA?
+
+* LLM.
+* Objetivo.
+* Contexto.
+* Ferramentas.
+* Memória.
+* Ações.
+* Validação humana.
+
+### Bloco 3 — Exemplos de agentes na construção
+
+* Agente de atas de reunião.
+* Agente de relatório semanal de obra.
+* Agente de análise de propostas.
+* Agente de manutenção predial.
+* Agente de documentação técnica.
+* Agente de acompanhamento de riscos.
+
+### Bloco 4 — Automação de processos com IA
+
+* Tarefas repetitivas.
+* Entradas e saídas claras.
+* Integração com e-mail, planilhas, documentos e sistemas.
+* Power Automate, Make, Zapier ou n8n como exemplos conceituais.
+
+### Bloco 5 — Riscos, ética e governança
+
+* Alucinação.
+* Privacidade.
+* Segurança da informação.
+* Responsabilidade técnica.
+* Viés.
+* Uso de documentos desatualizados.
+* Decisões que precisam de validação humana.
+
+### Bloco 6 — Como escolher bons casos de uso
+
+* Frequência da tarefa.
+* Tempo gasto.
+* Impacto no negócio.
+* Risco se a IA errar.
+* Disponibilidade de dados.
+* Facilidade de implementação.
+* Necessidade de revisão humana.

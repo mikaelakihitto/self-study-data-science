@@ -1,0 +1,331 @@
+---
+title: "Aula 1 - Da IA Tradicional a IA Generativa"
+subtitle: "Introducao pratica a IA e GenIA"
+author: "Material didatico"
+format:
+  pptx:
+    slide-level: 2
+    incremental: false
+  pdf:
+    toc: true
+    number-sections: false
+lang: pt-BR
+---
+
+# Visao Geral
+
+## Abertura
+
+- Disciplina: Introducao a Inteligencia Artificial.
+- Publico: profissionais de engenharia, arquitetura, construcao e gestao.
+- Abordagem: conceitual, pratica e aplicada, sem exigencia de programacao.
+- Foco desta aula: entender o que e IA, como ela evoluiu e por que a IA generativa mudou o trabalho cotidiano.
+
+## Objetivos da Aula
+
+Ao final desta aula, a turma deve ser capaz de:
+
+- explicar o que e Inteligencia Artificial em linguagem simples;
+- diferenciar automacao, IA tradicional, machine learning, deep learning e IA generativa;
+- reconhecer onde IA ja aparece no dia a dia profissional;
+- entender o papel dos LLMs e da IA multimodal;
+- identificar oportunidades e limites do uso de IA no contexto da construcao civil.
+
+## Agenda
+
+1. IA nao comecou com o ChatGPT.
+2. O que e Inteligencia Artificial.
+3. Evolucao: regras, machine learning, deep learning e IA generativa.
+4. O que mudou com a IA generativa.
+5. LLMs e IA multimodal.
+6. Demonstracoes praticas.
+7. Fechamento e debate.
+
+# IA no Cotidiano
+
+## IA Nao Comecou com o ChatGPT
+
+- Antes da IA generativa, muitas pessoas ja usavam IA sem chamar de IA.
+- O salto recente foi a interface em linguagem natural e o acesso massivo.
+- A novidade nao e apenas tecnologica; e tambem de usabilidade.
+
+## Exemplos do Dia a Dia
+
+- Waze sugerindo rotas e prevendo tempo de deslocamento.
+- Netflix, Spotify e YouTube recomendando conteudo.
+- Bancos detectando fraude em transacoes.
+- Reconhecimento facial em dispositivos e sistemas de acesso.
+- Tradutores automaticos e corretores inteligentes.
+
+## Exemplos no Contexto Profissional
+
+- Classificacao automatica de documentos.
+- Previsao de atrasos ou desvios de cronograma.
+- Apoio a orcamentos e comparacao de propostas.
+- Analise de registros fotograficos de obras.
+- Geração e revisao de comunicacoes tecnicas.
+
+## Pergunta Para Aquecimento
+
+- Onde voce ja encontrou IA no seu trabalho sem chamar isso de IA?
+- Quais tarefas da sua rotina ainda sao muito manuais?
+- O que mais consome tempo: buscar informacao, escrever, revisar ou decidir?
+
+# O Que e IA
+
+## Conceito Geral
+
+- Inteligencia Artificial e o campo que desenvolve sistemas capazes de executar tarefas que normalmente exigiriam capacidade humana.
+- Essas tarefas incluem perceber, classificar, prever, recomendar, gerar conteudo e apoiar decisoes.
+- IA nao significa consciencia, intencao ou entendimento humano pleno.
+
+## Definicao Pratica Para a Turma
+
+IA e o uso de modelos computacionais para:
+
+- reconhecer padroes;
+- tomar decisoes com base em dados;
+- prever resultados;
+- gerar respostas, textos, imagens ou analises.
+
+## Automacao Nao e a Mesma Coisa que IA
+
+| Automacao | IA |
+|---|---|
+| Segue regras predefinidas | Aprende padroes ou responde com base em modelos |
+| Se a situacao muda, tende a falhar | Lida melhor com variacao e ambiguidade |
+| Ex.: enviar e-mail ao receber formulario | Ex.: resumir o formulario e sugerir resposta |
+
+## Exemplo Simples
+
+Cenario: aprovacoes de documentos.
+
+- Automacao: se o arquivo estiver com nome incorreto, devolver.
+- IA tradicional: classificar automaticamente o tipo de documento.
+- IA generativa: ler o documento, resumir pendencias e redigir mensagem ao responsavel.
+
+## IA na Engenharia, Arquitetura e Construcao
+
+- Leitura e organizacao de memorial, contrato e ata.
+- Apoio a compatibilizacao de informacoes.
+- Analise de riscos e nao conformidades.
+- Priorizacao de demandas e pendencias.
+- Comunicacao com clientes, fornecedores e equipes.
+
+# Evolucao da IA
+
+## Linha de Evolucao
+
+1. Sistemas baseados em regras.
+2. Machine learning.
+3. Deep learning.
+4. IA generativa.
+
+## Sistemas Baseados em Regras
+
+- Funcionam com regras explicitas do tipo "se... entao...".
+- Sao uteis quando o processo e estavel e bem definido.
+- Trazem previsibilidade, mas pouca flexibilidade.
+
+## Onde Regras Funcionam Bem
+
+- Fluxos administrativos com criterios fixos.
+- Validacoes de campos em documentos.
+- Regras de negocio simples.
+- Rotinas repetitivas com baixa ambiguidade.
+
+## Limite dos Sistemas de Regras
+
+- Dificuldade para capturar contexto.
+- Alto custo para manter muitas excecoes.
+- Fraco desempenho quando a linguagem humana entra no processo.
+
+## Machine Learning
+
+- Em vez de programar todas as regras, o sistema aprende padroes a partir de dados.
+- O objetivo e prever, classificar ou pontuar novos casos.
+- O desempenho depende da qualidade dos dados e do problema formulado.
+
+## Exemplos de Machine Learning
+
+- Prever probabilidade de atraso de obra.
+- Classificar chamados de manutencao por prioridade.
+- Detectar desvios em custos ou produtividade.
+- Identificar perfis de ocorrencias recorrentes.
+
+## Deep Learning
+
+- Subconjunto de machine learning com redes neurais profundas.
+- Ganha forca em tarefas complexas: imagem, audio, texto e grandes volumes de dados.
+- Exige mais dados, infraestrutura e cuidado com interpretabilidade.
+
+## IA Generativa
+
+- Nao apenas classifica ou prediz; ela gera conteudo.
+- Pode produzir texto, imagem, codigo, tabelas, resumos e planos.
+- A interacao acontece por linguagem natural, o que amplia o acesso.
+
+## Comparacao Rapida
+
+| Abordagem | Pergunta central | Saida tipica |
+|---|---|---|
+| Regras | "Quais regras devo seguir?" | decisao fixa |
+| Machine learning | "Qual padrao existe nos dados?" | previsao ou classificacao |
+| Deep learning | "Como modelar padroes complexos?" | previsao, reconhecimento ou geracao |
+| IA generativa | "Como produzir uma resposta util?" | texto, imagem, codigo, analise |
+
+# O Que Mudou Com a IA Generativa
+
+## Mudancas de Interface
+
+- A linguagem natural virou interface de uso.
+- O usuario nao precisa conhecer menus complexos ou escrever codigo.
+- A barreira de entrada caiu drasticamente.
+
+## Mudancas de Escopo
+
+- A mesma ferramenta apoia tarefas muito diferentes.
+- O uso deixa de ser especializado e passa a ser generalista.
+- IA entra em redacao, analise, planejamento, estudo e apoio a decisao.
+
+## Mudancas de Ritmo de Trabalho
+
+- Menos tempo gasto em rascunhos iniciais.
+- Mais velocidade para explorar alternativas.
+- Mais capacidade de organizar informacoes dispersas.
+- Mais necessidade de revisar criticamente o resultado.
+
+## Oportunidades Reais
+
+- Estruturar relatarios e atas.
+- Elaborar checklists e planos de acao.
+- Traduzir linguagem tecnica para linguagem executiva.
+- Organizar requisitos, pendencias e comunicacoes.
+- Apoiar estudo de normas e documentos extensos.
+
+## Limites Reais
+
+- Pode inventar informacoes.
+- Pode responder com excesso de confianca.
+- Nem sempre conhece o contexto local da organizacao.
+- Sem documentos e criterio humano, a qualidade varia bastante.
+
+## Regra de Ouro
+
+Use IA generativa como apoio de produtividade e raciocinio estruturado, nao como substituta de responsabilidade tecnica.
+
+# LLMs e Multimodalidade
+
+## O Que Sao LLMs
+
+- LLM significa Large Language Model.
+- Sao modelos treinados em grande volume de texto para prever e gerar linguagem.
+- O comportamento util aparece em tarefas como resumir, explicar, comparar, transformar e planejar.
+
+## Exemplos Populares
+
+- ChatGPT.
+- Gemini.
+- Claude.
+- Copilot.
+
+## O Que Eles Fazem Bem
+
+- Resumir textos longos.
+- Reescrever com outro tom.
+- Comparar alternativas.
+- Extrair pontos-chave.
+- Criar estrutura inicial de documentos.
+- Apoiar brainstorm e tomada de decisao.
+
+## O Que Eles Nao Fazem Sozinhos
+
+- Garantir verdade factual.
+- Conhecer automaticamente documentos internos da empresa.
+- Assumir responsabilidade tecnica.
+- Substituir verificacao normativa, contratual ou legal.
+
+## O Que e IA Multimodal
+
+- E a capacidade de lidar com mais de um tipo de entrada ou saida.
+- Exemplo: texto, imagem, audio, planilha e documento.
+- Isso amplia o uso em ambientes de projeto, obra e manutencao.
+
+## Exemplos Multimodais na Construcao
+
+- Enviar foto de obra e pedir descricao de nao conformidades observaveis.
+- Anexar memorial ou contrato e pedir resumo executivo.
+- Comparar imagens, tabelas e texto em uma mesma analise.
+- Transformar uma reuniao gravada em ata estruturada.
+
+# Demonstracoes Praticas
+
+## Demo 1 - Relatorio de Obra
+
+Prompt sugerido:
+
+"Atue como engenheiro de obra. A partir das anotacoes abaixo, produza um relatorio diario objetivo com status, pendencias, riscos e proximos passos. Use linguagem profissional e formato em topicos."
+
+## Demo 2 - Checklist de Inspecao
+
+Prompt sugerido:
+
+"Crie um checklist de inspecao para entrega de ambiente corporativo considerando acabamento, instalacoes, seguranca, documentacao e registro fotografico. Organize por categoria."
+
+## Demo 3 - Analise de Risco
+
+Prompt sugerido:
+
+"Com base nesta descricao de obra e cronograma resumido, liste os principais riscos operacionais, seus impactos e acoes preventivas. Priorize por severidade."
+
+## Demo 4 - Comunicacao com Cliente
+
+Prompt sugerido:
+
+"Reescreva a mensagem abaixo para um cliente nao tecnico, mantendo transparencia, clareza e foco em solucao. Evite jargao excessivo."
+
+## O Que Observar nas Demos
+
+- Clareza do pedido.
+- Nivel de contexto fornecido.
+- Formato solicitado.
+- Qualidade da saida.
+- Necessidade de revisao humana.
+
+# Atividade em Sala
+
+## Dinamica Rapida
+
+Em duplas ou trios:
+
+1. Escolham uma tarefa real do seu contexto profissional.
+2. Classifiquem se ela se encaixa melhor em automacao, IA tradicional ou IA generativa.
+3. Expliquem por que.
+4. Sugiram um uso pratico de IA para essa tarefa.
+
+## Perguntas Para Discussao
+
+- Onde a IA gera mais valor imediato no seu contexto?
+- Onde o risco de erro e alto demais?
+- Que tarefas exigem validacao humana obrigatoria?
+
+# Fechamento
+
+## Sintese da Aula
+
+- IA existe ha muito tempo e nao comecou com o ChatGPT.
+- O salto recente foi a combinacao de modelos poderosos com interface simples.
+- IA generativa ampliou o acesso e o tipo de tarefa que pode ser apoiada.
+- Valor real depende de contexto, criterio e revisao.
+
+## Ponte Para a Aula 2
+
+Na proxima aula, o foco sera transformar pedidos vagos em interacoes uteis:
+
+- como escrever prompts melhores;
+- como avaliar respostas;
+- como usar IA com documentos e contexto por meio de RAG.
+
+## Mensagem Final
+
+A pergunta mais util nao e "a IA substitui profissionais?", mas sim "como profissionais melhores usam IA para trabalhar com mais qualidade, velocidade e criterio?"
