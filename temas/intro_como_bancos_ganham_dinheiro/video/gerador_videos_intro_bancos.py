@@ -1,16 +1,27 @@
-from pathlib import Path
-
 from manim import *
 
+from temas.manim_utils import (
+    ACCENT_BLUE,
+    ACCENT_CYAN,
+    ACCENT_GREEN,
+    ACCENT_ORANGE,
+    ACCENT_RED,
+    ACCENT_YELLOW,
+    PANEL_FILL,
+    SURFACE_ALT,
+    SURFACE_FILL,
+    TEXT_MAIN,
+    TEXT_MUTED,
+    configure_default_video_output,
+    create_arrow_between,
+    create_box,
+    create_chip,
+    create_title,
+    create_vertical_arrow_between,
+)
 
-BASE_DIR = Path(__file__).resolve().parents[1]
-ASSETS_DIR = BASE_DIR / "assets"
-ASSETS_DIR.mkdir(parents=True, exist_ok=True)
 
-config.media_dir = str(ASSETS_DIR)
-config.pixel_width = 1920
-config.pixel_height = 1080
-config.background_color = "#0B1020"
+BASE_DIR, ASSETS_DIR = configure_default_video_output(__file__)
 
 
 """
@@ -21,116 +32,7 @@ Render examples:
 """
 
 
-BACKGROUND_FILL = "#151B2F"
-SURFACE_FILL = "#11182A"
-SURFACE_ALT = "#16243A"
-TEXT_MAIN = GREY_A
-TEXT_MUTED = GREY_B
-TITLE_COLOR = BLUE_B
-ACCENT_BLUE = BLUE_C
-ACCENT_GREEN = GREEN_C
-ACCENT_YELLOW = YELLOW_C
-ACCENT_ORANGE = ORANGE
-ACCENT_RED = RED_C
-ACCENT_CYAN = TEAL_C
-
-
-def create_title(text: str) -> Text:
-    return Text(text, font_size=40, color=TITLE_COLOR).to_edge(UP, buff=0.35)
-
-
-def create_caption(text: str, color=TEXT_MUTED, font_size: int = 24) -> Text:
-    return Text(text, font_size=font_size, color=color)
-
-
-def create_panel(
-    body,
-    title: str = "",
-    color=ACCENT_BLUE,
-    padding: float = 0.28,
-    min_width: float = 0.0,
-    min_height: float = 0.0,
-):
-    content = body
-    if title:
-        header = Text(title, font_size=26, color=color)
-        content = VGroup(header, body).arrange(DOWN, buff=0.16)
-    frame = RoundedRectangle(
-        corner_radius=0.22,
-        width=max(content.width + 2 * padding, min_width),
-        height=max(content.height + 2 * padding, min_height),
-        stroke_color=color,
-        stroke_width=2.6,
-        fill_color=BACKGROUND_FILL,
-        fill_opacity=0.94,
-    )
-    content.move_to(frame.get_center())
-    return VGroup(frame, content)
-
-
-def create_chip(label: str, color=ACCENT_BLUE, font_size: int = 26):
-    text = Text(label, font_size=font_size, color=TEXT_MAIN)
-    frame = RoundedRectangle(
-        corner_radius=0.18,
-        width=text.width + 0.6,
-        height=0.78,
-        stroke_color=color,
-        stroke_width=2.4,
-        fill_color=SURFACE_FILL,
-        fill_opacity=0.98,
-    )
-    text.move_to(frame.get_center())
-    return VGroup(frame, text)
-
-
-def create_box(
-    title: str,
-    subtitle: str = "",
-    width: float = 3.1,
-    height: float = 1.6,
-    color=ACCENT_BLUE,
-    title_size: int = 28,
-    subtitle_size: int = 20,
-):
-    frame = RoundedRectangle(
-        corner_radius=0.18,
-        width=width,
-        height=height,
-        stroke_color=color,
-        stroke_width=2.8,
-        fill_color=BACKGROUND_FILL,
-        fill_opacity=0.96,
-    )
-    title_mob = Text(title, font_size=title_size, color=color)
-    if subtitle:
-        subtitle_mob = Text(subtitle, font_size=subtitle_size, color=TEXT_MAIN)
-        content = VGroup(title_mob, subtitle_mob).arrange(DOWN, buff=0.1)
-    else:
-        content = title_mob
-    content.move_to(frame.get_center())
-    return VGroup(frame, content)
-
-
-def create_arrow_between(source, target, color=TEXT_MUTED, buff: float = 0.14, stroke_width: float = 4):
-    return Arrow(
-        source.get_right(),
-        target.get_left(),
-        buff=buff,
-        stroke_width=stroke_width,
-        color=color,
-        max_tip_length_to_length_ratio=0.14,
-    )
-
-
-def create_vertical_arrow(source, target, color=TEXT_MUTED, buff: float = 0.14, stroke_width: float = 4):
-    return Arrow(
-        source.get_bottom(),
-        target.get_top(),
-        buff=buff,
-        stroke_width=stroke_width,
-        color=color,
-        max_tip_length_to_length_ratio=0.14,
-    )
+BACKGROUND_FILL = PANEL_FILL
 
 
 def create_person(label: str, color=ACCENT_BLUE, scale_factor: float = 1.0):
@@ -338,7 +240,7 @@ class Scene01Hook(Scene):
         decision = create_box("decisao", "quem recebe o dinheiro?", color=ACCENT_YELLOW, width=3.4).to_edge(DOWN, buff=0.5)
         left_arrow = create_arrow_between(saver, bank, color=ACCENT_BLUE)
         right_arrow = create_arrow_between(bank, borrower, color=ACCENT_ORANGE)
-        decision_arrow = create_vertical_arrow(bank, decision, color=ACCENT_YELLOW)
+        decision_arrow = create_vertical_arrow_between(bank, decision, color=ACCENT_YELLOW)
 
         self.play(FadeIn(title), run_time=0.9)
         for line in copy:

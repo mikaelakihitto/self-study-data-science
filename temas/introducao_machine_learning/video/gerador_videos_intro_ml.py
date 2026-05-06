@@ -1,15 +1,10 @@
-from pathlib import Path
-
 from manim import *
 import numpy as np
 
+from temas.manim_utils import configure_manim_output
 
-BASE_DIR = Path(__file__).resolve().parents[1]
-ASSETS_DIR = BASE_DIR / "assets"
-ASSETS_DIR.mkdir(parents=True, exist_ok=True)
 
-# Direct all Manim outputs (videos/images/partials) to this theme assets folder.
-config.media_dir = str(ASSETS_DIR)
+BASE_DIR, ASSETS_DIR = configure_manim_output(__file__)
 
 
 """

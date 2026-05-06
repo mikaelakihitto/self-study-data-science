@@ -1,19 +1,22 @@
-from pathlib import Path
-
 from manim import *
 
+from temas.manim_utils import (
+    ACCENT_BLUE,
+    ACCENT_GREEN,
+    ACCENT_RED,
+    ACCENT_YELLOW,
+    PANEL_FILL,
+    SURFACE_FILL,
+    TEXT_MAIN,
+    TEXT_MUTED,
+    configure_default_video_output,
+    create_arrow_between,
+    create_auto_label,
+    create_title as build_title,
+)
 
-BASE_DIR = Path(__file__).resolve().parents[1]
-ASSETS_DIR = BASE_DIR / "assets"
-ASSETS_DIR.mkdir(parents=True, exist_ok=True)
 
-# Direct all Manim outputs (videos/images/partials) to this theme assets folder.
-config.media_dir = str(ASSETS_DIR)
-
-# Keep an explicit 16:9 canvas and a consistent dark theme.
-config.pixel_width = 1920
-config.pixel_height = 1080
-config.background_color = "#0B1020"
+BASE_DIR, ASSETS_DIR = configure_default_video_output(__file__)
 
 
 """
@@ -24,26 +27,14 @@ Render examples:
 """
 
 
-BACKGROUND_FILL = "#151B2F"
-SURFACE_FILL = "#11182A"
-TEXT_MAIN = GREY_A
-TEXT_MUTED = GREY_B
-TITLE_COLOR = BLUE_B
-ACCENT_BLUE = BLUE_C
-ACCENT_GREEN = GREEN_C
-ACCENT_YELLOW = YELLOW_C
-ACCENT_RED = RED_C
+BACKGROUND_FILL = PANEL_FILL
 
 
 def create_title(text: str) -> Text:
-    return Text(text, font_size=38, color=TITLE_COLOR).to_edge(UP, buff=0.35)
+    return build_title(text, font_size=38)
 
 
-def create_label_mobject(label: str, font_size: int = 28, color=WHITE):
-    math_tokens = ("\\", "_", "^", "{", "}", "=", r"\cdots", r"\ldots")
-    if any(token in label for token in math_tokens):
-        return MathTex(label, font_size=font_size, color=color)
-    return Text(label, font_size=max(int(font_size * 0.72), 18), color=color)
+create_label_mobject = create_auto_label
 
 
 def create_symbol_box(
@@ -226,17 +217,6 @@ def create_embedding_vector(
     )
     label = MathTex(tex, font_size=font_size, color=TEXT_MAIN).move_to(frame.get_center())
     return VGroup(frame, label)
-
-
-def create_arrow_between(source, target, buff: float = 0.16, color=TEXT_MAIN, stroke_width: float = 4):
-    return Arrow(
-        source.get_right(),
-        target.get_left(),
-        buff=buff,
-        stroke_width=stroke_width,
-        color=color,
-        max_tip_length_to_length_ratio=0.14,
-    )
 
 
 def create_task_card(
