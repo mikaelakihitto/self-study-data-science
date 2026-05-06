@@ -1,7 +1,14 @@
+from pathlib import Path
+import sys
+
 from manim import *
 import numpy as np
 
-from temas.manim_utils import configure_manim_output
+ROOT_DIR = Path(__file__).resolve().parents[3]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
+from temas.utils.manim_utils import configure_manim_output
 
 
 BASE_DIR, ASSETS_DIR = configure_manim_output(__file__)

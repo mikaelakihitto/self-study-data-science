@@ -1,6 +1,13 @@
+from pathlib import Path
+import sys
+
 from manim import *
 
-from temas.manim_utils import (
+ROOT_DIR = Path(__file__).resolve().parents[3]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
+from temas.utils.manim_utils import (
     ACCENT_BLUE,
     ACCENT_CYAN,
     ACCENT_GREEN,
