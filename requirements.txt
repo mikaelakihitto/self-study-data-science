@@ -7,3 +7,5 @@ jupyter
 statsmodels
 manim
 gensim
+torch
+torchvision
